@@ -35,3 +35,18 @@ class PostDetail(View):
                 "liked": liked
             }
         )
+
+
+class LoginPage(generic.ListView):
+    def get(self, request):
+        return render(request, 'login.html')
+
+
+class LogoutPage(generic.ListView):
+    def get(self, request):
+        return render(request, 'logout.html')
+
+
+class SignupPage(generic.ListView):
+    def get(self, request):
+        return render(request, 'signup.html')

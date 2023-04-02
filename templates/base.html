@@ -21,12 +21,6 @@
                 <li>
                     <a href="{% url 'blog' %}">Blog</a>
                 </li>
-                <li>
-                    <a href="{% url 'gallary' %}">Gallary</a>
-                </li>
-                <li>
-                    <a href="{% url 'contact' %}">contact</a>
-                </li>
                 {% if user.is_authenrticated %}
                 <li>
                     <a href="{% url 'account_logout' %}">Log out</a>
@@ -38,6 +32,7 @@
                 <li>
                     <a href="{% url 'account_signup' %}">Signup</a>
                 </li>
+                {% endif %}
 
             </ul>
         </nav>
