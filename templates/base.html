@@ -3,17 +3,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-     <title>A'Bakes</title>
+    <title>A'Bakes</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
 </head>
 <body>
     <!-- Nav Bar & Logo -->
     <header>
         <nav>
-            <h2>logo</h2>
+            <h2>Logo</h2>
             <ul>
                 <li>
                     <a href="{% url 'home' %}">Home</a>
@@ -21,7 +20,7 @@
                 <li>
                     <a href="{% url 'blog' %}">Blog</a>
                 </li>
-                {% if user.is_authenrticated %}
+                {% if user.is_authenticated %}
                 <li>
                     <a href="{% url 'account_logout' %}">Log out</a>
                 </li>
@@ -33,7 +32,6 @@
                     <a href="{% url 'account_signup' %}">Signup</a>
                 </li>
                 {% endif %}
-
             </ul>
         </nav>
     </header>
