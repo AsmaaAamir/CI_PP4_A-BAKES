@@ -82,12 +82,7 @@ class PostLike(View):
             post.likes.remove(request.user)
         else:
             post.likes.add(request.user) 
-        return HttpResponseRedirect(reverse('post_detail', args=[slug]))
-
-
-
-
-
+        return HttpResponseRedirect(reverse('recipe', args=[slug]))
 
 
 class LoginPage(generic.ListView):
