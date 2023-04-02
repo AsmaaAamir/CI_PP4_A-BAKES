@@ -17,7 +17,7 @@
                                 <img class="card-img" src="{{ post.featured_image.url }}">
                                 {% endif %}
                             </div>
-                            <a href="#" class="post-link">
+                            <a href="{% url 'recipe' post.slug %}" class="post-link">
                                 <h3 class="card-tilte">{{ post.title}}</h3>
                             </a>
                             <p class="card-text"> {{ post.excerpt }}</p>
