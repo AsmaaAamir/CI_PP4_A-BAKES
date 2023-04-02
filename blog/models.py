@@ -8,7 +8,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 
 """
-    This is the Model for the recipe post. 
+    This is the Model for the recipe post
 """
 
 
