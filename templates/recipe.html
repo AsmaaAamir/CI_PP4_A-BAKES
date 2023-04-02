@@ -91,7 +91,9 @@
                 Your comment is being reviewed, I appreciate your patience.Thank you 
             </div>
             {% else %}
+
             {% if user.is_authenticated %}
+            
             <h3>Leave a comment:</h3>
             <p>Posting as: {{ user.username }}</p>
             <form method="post" style="margin-top:1.3em;">
