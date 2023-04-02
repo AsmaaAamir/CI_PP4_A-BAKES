@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="recipe-hero-continer">
+   <div>
+     <!--Recipe heading -->
+    <h1 class="recipe-title">{{ post.title }}</h1>
+   </div>
+   <div class="welcome-image">
+    <!--Welcoming feature images -->
+    {% if "blog_image" in post.featured_image.url  %}
+    <img src="#" width="100%">
+    {% else %}
+    <img src="{{ post.featured_image.url }}" width="100%">
+    {% endif %}
+   </div>
+</div>
+<div class="recipe-container">
+     <!-- Ingredient for the recipe -->
+    <div class="ingredient-continer">
+        <p class="card-text">
+           
+            {{ post.ingredient_content | safe }}
+        </p>
+    </div>
+    <div class="recipe-image">
+        <!-- Images -->
+        {% if "blog_image" in post.featured_image.url  %}
+        <img src="#" width="100%">
+        {% else %}
+        <img src="{{ post.featured_image2.url }}" width="75%">
+        {% endif %}
+    </div>
+     <!-- Instruction for the recipe -->
+    <div class="instruction-continer">
+        <p class="card-text">
+           
+            {{ post.instruction_content | safe }}
+        </p>
+    </div>
+    <div class="recipe-image">
+        <!-- Images -->
+        {% if "blog_image" in post.featured_image.url  %}
+        <img src="#" width="100%">
+        {% else %}
+        <img src="{{ post.featured_image3.url }}" width="75%">
+        {% endif %}
+    </div>
+    <!-- Number of likes -->
+    <div class="row">
+        <div class="col-1">
+            <strong class="like-comment-icon"><i class="far fa heart"></i>
+            {{ post.number_of_likes }}
+            </strong>
+        </div>
+     <!-- Number of likes -->
+        <div class="col-1">
+            {% with comments.count as total_comments %}
+                <strong class="like-comment-icon"><i class="far fa comments"></i>
+                    {{ total_comments }}
+            </strong>
+            {% endwith %}
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
