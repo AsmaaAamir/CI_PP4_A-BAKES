@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['ci-pp4-a-bakes.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['ci-pp4-a-abakes.herokuapp.com', 'localhost']
 
 
 # Application definition
