@@ -1,1 +1,1 @@
-web: gunicorn abakes.wsgi 
+web: gunicorn abakes.wsgi
