@@ -18,9 +18,11 @@ class Post(models.Model):
     featured_image = CloudinaryField('image', default='blog_image')
     excerpt = models.TextField(blank=True)
     ingredient_content = models.TextField()
+    featured_image2 = CloudinaryField('image2', default='blog_image')
     instruction_content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
+    featured_image3 = CloudinaryField('images', default='blog_image')
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
 
@@ -33,8 +35,6 @@ class Post(models.Model):
     def number_of_likes(self):
         return self.likes.count()
 
-
-""" This is a modle for comments section for the post. """
 
 
 class Comment(models.Model):
