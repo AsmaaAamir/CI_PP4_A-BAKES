@@ -10,25 +10,44 @@
    
 </head>
 <body>
+    <!-- Nav Bar & Logo -->
     <header>
         <nav>
             <h2>logo</h2>
             <ul>
-                <lil>
+                <li>
                     <a href="{% url 'home' %}">Home</a>
-                </lil>
-                <lil>
+                </li>
+                <li>
                     <a href="{% url 'blog' %}">Blog</a>
-                </lil>
+                </li>
+                <li>
+                    <a href="{% url 'gallary' %}">Gallary</a>
+                </li>
+                <li>
+                    <a href="{% url 'contact' %}">contact</a>
+                </li>
+                {% if user.is_authenrticated %}
+                <li>
+                    <a href="{% url 'account_logout' %}">Log out</a>
+                </li>
+                {% else %}
+                <li>
+                    <a href="{% url 'account_login' %}">Login</a>
+                </li>
+                <li>
+                    <a href="{% url 'account_signup' %}">Signup</a>
+                </li>
 
             </ul>
         </nav>
     </header>
     <main>
     {% block content %}
-
+    <!-- Page Content goes here -->
     {% endblock content%}    
     </main>
+    <!-- Footer -->
     <footer>
         <h2>soical account</h2>
     </footer>
