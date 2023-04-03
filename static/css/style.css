@@ -65,7 +65,7 @@ main{
 }
 .home-link,
 .navbar-link {
-  color: var(--navbar-text-color);
+  color: #ad0942;
   text-decoration: none;
   display: flex;
   font-weight: 400;
@@ -146,6 +146,9 @@ main{
   visibility: visible;
 }
 .navbar-links {
+  font-family: 'Indie Flower', sans-serif;
+  font-size: larger;
+  font-weight: bolder;
   list-style: none;
   position: absolute;
   background-color: var(--navbar-bg-color);
@@ -197,6 +200,48 @@ main{
   background-size: cover;
   max-width: 100vw;
   height: 100vh;
+}
+.hero-text-2{
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  font-family: 'Dancing Script', sans-serif;
+  font-weight: bolder;
+  color: #aa3e98ff;
+  font-size: 70px;
+}
+.hero-text-2 h1{
+  font-family: 'Dancing Script', sans-serif;
+  font-weight: bolder;
+  color: #aa3e98ff;
+  font-size: 90px;
+}
+.hero-text-2 h1:hover{
+  color: #ad0942;
+}
+.hero-text-1{
+  text-align: center;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.hero-text-1 h2{
+  font-family: 'Indie Flower', sans-serif;
+  font-size: 60px;
+}
+.hero-text{
+  font-size: 25px;
+  font-family: 'Indie Flower', sans-serif;
+  position: absolute;
+  top: 75%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 25px;
 }
 /* ------------------ Register Page -------------------- */
 .signup-container {
