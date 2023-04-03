@@ -25,59 +25,73 @@
 </head>
 <body>
     <!-- Nav Bar & Logo -->
-    <nav class="nav">  
-        <logo class="logo"><a href="{% url 'home' %}">A'Kitchen</a></logo>
-         
-        <ul>
-            <li>
-                <a  class="active" href="{% url 'home' %}">Home</a>
+    <header id="navbar">
+    <nav class="navbar-container container">
+      <a href="{% url 'home' %}" class="home-link">
+        A'Bakes
+      </a>
+      <!-- Navigation -->
+      <button type="button" id="navbar-toggle" aria-controls="navbar-menu" aria-label="Toggle menu" aria-expanded="false">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div id="navbar-menu" aria-labelledby="navbar-toggle">
+        <ul class="navbar-links">
+            <li class="navbar-item">
+                <a class="navbar-link" href="{% url 'home' %}">Home</a>
             </li>
-            <li>
-                <a href="{% url 'blog' %}">Blog</a>
+            <li class="navbar-item">
+                <a class="navbar-link" href="{% url 'blog' %}">Blog</a>
             </li>
-            <li>
-                <a href="{% url 'gallary' %}">Gallary</a>
+            <li class="navbar-item">
+                <a class="navbar-link" href="{% url 'gallary' %}">Gallary</a>
             </li>
-            <li>
-                <a href="{% url 'contact' %}">Contact</a>
+            <li class="navbar-item">
+                <a class="navbar-link" href="{% url 'contact' %}">Contact</a>
             </li>
             {% if user.is_authenticated %}
-            <li>
-                <a href="{% url 'account_logout' %}">Log Out</a>
+            <li class="navbar-item">
+                <a class="navbar-link" href="{% url 'account_logout' %}">Logout</a>
             </li>
             {% else %}
-            <li>
-                <a href="{% url 'account_login' %}">Log In</a>
+            <li class="navbar-item">
+                <a class="navbar-link" href="{% url 'account_login' %}">Login</a>
             </li>
-            <li>
-                <a href="{% url 'account_signup' %}">Sign Up</a>
+            <li class="navbar-item">
+                <a class="navbar-link" href="{% url 'account_signup' %}">Signup</a>
             </li>
             {% endif %}
         </ul>
+      </div>
     </nav>
-    
-    <div class="message-container">
-        <div class="row">
-            <div class="col-md-8 offset-md-2">
-                {% for message in messages %}
-                <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
-                    {{ message | safe }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-lable="Close">
-                    </button>
-                </div>
-                {% endfor%}
-            </div>
-        </div>
-    </div>
+</header>
     <main>
     {% block content %}
     <!-- Page Content goes here -->
     {% endblock content%}    
     </main>
-    <!-- Footer -->
-    <footer>
-        <h2>soical account</h2>
-    </footer>
+    <!-- Footer --> 
+<footer>
+    <h3>Finds Us </h3>
+    <div class="social">
+        <ul>
+            <li><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://www.snapchat.com/" target="_blank"><i class="fab fa-snapchat"></i></a></li>
+            <li><a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a></li>
+            <li><a href="https://www.tiktok.com/en/" target="_blank"><i class="fab fa-tiktok"></i></a></li>
+        </ul>
+    </div>
+    <div class="short-link">
+        <ul>
+            <li><a href="{% url 'blog' %}">Blog</a></li>
+            <li><a href="{% url 'gallary' %}">Gallary</a></li>
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+        </ul>
+    </div>
+    <p>Copyright@ 2023 By Asma</p>
+</footer>
     <script src="{% static 'js/base.js' %}"></script>
 </body>
 </html>
