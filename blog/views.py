@@ -98,3 +98,13 @@ class LogoutPage(generic.ListView):
 class SignupPage(generic.ListView):
     def get(self, request):
         return render(request, 'signup.html')
+
+
+class GallaryPage(generic.ListView):
+    def get(self, request):
+        return render(request, 'gallary.html')
+
+
+class ContactPage(generic.ListView):
+    def get(self, request):
+        return render(request, 'contact.html')
