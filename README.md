@@ -40,3 +40,13 @@ This project's goal was to create a full-stack Django application using the comp
     1:As a **site admin** I can **create, edit and delete post on the django admin** so that **I can manage the site**>
     2:As a **site admin** I can **approve and delete comments the django admin** so that **I can filter out the comment for best UX**>
     3::As a **site admin** I can **manage user** so that **I can create, delete users and updated their details**.
+
+### Future Improvements
+I would like to implement a number of functionality upgrades in the future. I was unable to complete my project because of a personal situation. But here is what I would have added:
+1. A few of the user tales are unfinished.
+2. The capability of recovering a user's password in the event that it has been lost, stolen, or corrupted.
+3. Providing the option for users to share their recipes so that others can try them.
+4. Give the user the option to rate the recipe once they tried.
+5. Allow users to save a recipe to their favourites so that they may return to it without having to hunt for it after logging in.
+6. The opportunity to let users vote on the upcoming recipe.
+7. Complete the read-me file.
