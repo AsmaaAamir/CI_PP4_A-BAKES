@@ -25,46 +25,37 @@
 </head>
 <body>
     <!-- Nav Bar & Logo -->
-    <header class="main-header">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg main-nav px-0">
-                <a class="navbar-brand" href=""></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="icon-bar icon-bar-1"></span>
-                    <span class="icon-bar icon-bar-2"></span>
-                    <span class="icon-bar icon-bar-3"></span>
-                </button>
-            <div class="collapse navbar-collapse" id="mainMenu">
-                <ul class="navbar-nav ml-auto text-uppercase f1">
-                <li>
-                    <a href="{% url 'home' %}" class="active active-first">Home</a>
-                </li>
-                <li>
-                    <a href="{% url 'blog' %}">Blog</a>
-                </li>
-                <li>
-                    <a href="{% url 'gallary' %}">Gallary</a>
-                </li>
-                <li>
-                    <a href="{% url 'contact' %}">Contact Us</a>
-                </li>
-                {% if user.is_authenticated %}
-                <li>
-                    <a href="{% url 'account_logout' %}">Log Out</a>
-                </li>
-                {% else %}
-                <li>
-                    <a href="{% url 'account_login' %}">Log In</a>
-                </li>
-                <li>
-                    <a href="{% url 'account_signup' %}">Sign Up</a>
-                </li>
-                {% endif %}
-                </ul>
-            </div>
-            </nav>
-        </div>
-    </header>      
+    <nav class="nav">  
+        <logo class="logo"><a href="{% url 'home' %}">A'Kitchen</a></logo>
+         
+        <ul>
+            <li>
+                <a  class="active" href="{% url 'home' %}">Home</a>
+            </li>
+            <li>
+                <a href="{% url 'blog' %}">Blog</a>
+            </li>
+            <li>
+                <a href="{% url 'gallary' %}">Gallary</a>
+            </li>
+            <li>
+                <a href="{% url 'contact' %}">Contact</a>
+            </li>
+            {% if user.is_authenticated %}
+            <li>
+                <a href="{% url 'account_logout' %}">Log Out</a>
+            </li>
+            {% else %}
+            <li>
+                <a href="{% url 'account_login' %}">Log In</a>
+            </li>
+            <li>
+                <a href="{% url 'account_signup' %}">Sign Up</a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+    
     <div class="message-container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
