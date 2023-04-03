@@ -1,4 +1,26 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="contact-container">
+    <div class="contact-box">
+        <div class="contact-img"></div>
+        <div class="contact-form-box">
+            <h2><span>Contact Us</span></h2>
+            <hr>
+            <p class="contact-text">
+                Having a problem... Please get in touch, I'd be pleased to respond to your 
+                inquiries and hear your comments and recommendations.
+            </p>
+            <form id="contact-form">
+                {% csrf_token %}
+                <input for="name"type="text" name="name" placeholder="Name" required>
+                <input type="text" for="email" name="email" placeholder="Email address" required>
+                <textarea name="textare" id="text-area" cols="20" rows="10" placeholder="Your Message please"  required></textarea>
+                <button type="submit" name="submit button" value="Send">Send</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+
 {% endblock content %}

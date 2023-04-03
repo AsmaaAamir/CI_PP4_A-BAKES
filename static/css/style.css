@@ -16,15 +16,16 @@ body{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 span{
   font-family: 'Dancing Script', sans-serif;
 }
 main{
-  padding-top: 120px;
+  padding-top: 100px;
 }
 
-/*-------- NavbAR & Logo----------*/
+/*-------- NavBar & Logo----------*/
 
 .home-link {
   font-size: 40px;
@@ -56,7 +57,6 @@ main{
   margin: 0.4em;
   width: 100%;
 }
-
 .home-link,
 .navbar-link {
   color: var(--navbar-text-color);
@@ -182,38 +182,7 @@ main{
 }
 
 /* ------------------ Home Page -------------------- */
-.hero-img{
-  height: 700px;
-  width: 100%;
-  background-image: url('https://res.cloudinary.com/doow4kmj4/image/upload/v1680280865/images/hero-image_n2n2za.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.hero-img h1{
-  color: #aa3e98ff;
-  font-family: sans-serif;
-  padding-top: 70px;
-  padding-left: 40px;
-}
-.hero-img  span{
-  font-size: 170%;
-}
-.hero-img hr{
-  width:40%;
-  color:#1abc9c;
-  padding-left: 40px;
-  height: 5px;
-}
-.hero-text {
-  font-size: 160%;
-  font-family: 'Indie Flower', sans-serif;
-  letter-spacing: 2px;
-  width: 500px;
-  height: 400px;
-  padding-top:40px;
-  padding-left: 50px;
-}
+
 /*-------- General CSS ----------*/
 /* ------------------ Login Page -------------------- */
 .login-container{
@@ -264,8 +233,8 @@ main{
 .gallary-box .gallary-col img{
   width: 100%;
   padding-bottom: 15px;
-  border-radius: 10px;
 }
+
 @media (max-width: 769px){
   .gallary-container .gallary-box {
     flex-direction: column;
@@ -282,7 +251,82 @@ main{
     font-size: 25px;
   }
 }
-
+/* ------------------ Contact Page -------------------- */
+.contact-container {
+ 
+  position: relative;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px 100px;
+}
+.contact-container:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://res.cloudinary.com/doow4kmj4/image/upload/v1680499333/CI_PP4_A-BAKES/contact-bg_lmmkpy.jpg");
+  background-size: cover;
+  z-index: -1;
+  filter: blur(3px);
+}
+.contact-box{
+  max-width: 850px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.contact-img{
+  height: 100%;
+  background-image: url("https://res.cloudinary.com/doow4kmj4/image/upload/v1680438736/CI_PP4_A-BAKES/Gallary.page/15_hm3gbv.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.contact-form-box{
+  padding:25px 40px;
+}
+.contact-form-box h2{
+  font-size: 50px;
+  font-weight: bolder;
+  color: #aa3e98ff;
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+#contact-form input{
+  width: 100%;
+  padding: 8px 16px;
+  margin-bottom: 22px;
+}
+#text-area{
+  width: 100%;
+  padding: 8px 16px;
+  margin-bottom: 22px;
+}
+#text-area:hover{
+  background-color: rgba(0, 0, 0, 0.1);
+}
+#contact-form input:hover{
+  background-color: rgba(0, 0, 0, 0.1);
+}
+#contact-form button{
+  width: 100%;
+  font-size: 20px;
+  padding: 8px 16px;
+  margin-bottom: 22px;
+  outline: none;
+  border: none;
+}
+#contact-form button:hover{
+  background-color:rgb(235, 116, 215)
+}
 /* ------------------ Footer -------------------- */
 footer{
   height: 180px;
