@@ -243,6 +243,21 @@ main{
   border-radius: 10px;
   padding: 25px;
 }
+
+/* ------------------   Recipe Page -------------------- */
+.recipe-title{
+    text-align: center;
+    font-family: 'DANCING SCRIPT';
+    FONT-SIZE: 50px;
+    color: crimson;
+}
+.recipe-hr{
+  width: 50%;
+  margin: auto;
+}
+.recipe-container img{
+  align-items: center;
+}
 /* ------------------ Register Page -------------------- */
 .signup-container {
   position: relative;

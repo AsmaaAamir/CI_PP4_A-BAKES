@@ -24,19 +24,19 @@ This project's goal was to create a full-stack Django application using the comp
 
 ## User stories 
 ### 1. Account Management
-    1.1:  As a **site user** I can ** register ** so that **have the ability to comment on posts and vote on them, as well as a role-based login.**.
-    1.2: As a **site user** I can **login with my username and password** so that **Ican utilise all of the website's features.**. 
-    1.3: As a **site user** I can **log out** so that **my information stay safe**.
+    1:  As a **site user** I can ** register ** so that **have the ability to comment on posts and vote on them, as well as a role-based login.**.
+    2: As a **site user** I can **login with my username and password** so that **Ican utilise all of the website's features.**. 
+    3: As a **site user** I can **log out** so that **my information stay safe**.
 ### 2. Navigation
-    2.1: As a **site user** I can **click on menu** so that **I am able to choose which page to go to**.
-    2.2:As a **site user** I can **locate the social media accounts** so that **I can follow their touch with admin and other user**.
+    1: As a **site user** I can **click on menu** so that **I am able to choose which page to go to**.
+    2:As a **site user** I can **locate the social media accounts** so that **I can follow their touch with admin and other user**.
 ### 3. Post
-    3.1:As a **site user/guest** I can **paginated list of post ** so that **I am able to choose which recipes I want**.
-    3.2:As a **site user** I can **like a post ** so that **I can show my love for the post to admin and other users**.
-    3.3:As a **site user** I can **comment on a post ** so that **I can give my opion on how I founf teh recipe and other care read my comment and interact with me**.
-    3.4:As a **site user** I can **see number of likes and comments ** so that **I can see the most popular recipe **.
-    3.5::As a **site user** I can **paginated list of comments ** so that ** I am not overwheml with so many comment on my screen**.
+    1:As a **site user/guest** I can **paginated list of post ** so that **I am able to choose which recipes I want**.
+    2:As a **site user** I can **like a post ** so that **I can show my love for the post to admin and other users**.
+    3:As a **site user** I can **comment on a post ** so that **I can give my opion on how I founf teh recipe and other care read my comment and interact with me**.
+    4:As a **site user** I can **see number of likes and comments ** so that **I can see the most popular recipe **.
+    5::As a **site user** I can **paginated list of comments ** so that ** I am not overwheml with so many comment on my screen**.
 ### 4. Site Admin 
-    4.1:As a **site admin** I can **create, edit and delete post on the django admin** so that **I can manage the site**>
-    4.2:As a **site admin** I can **approve and delete comments the django admin** so that **I can filter out the comment for best UX**>
-    4.3::As a **site admin** I can **manage user** so that **I can create, delete users and updated their details**.
+    1:As a **site admin** I can **create, edit and delete post on the django admin** so that **I can manage the site**>
+    2:As a **site admin** I can **approve and delete comments the django admin** so that **I can filter out the comment for best UX**>
+    3::As a **site admin** I can **manage user** so that **I can create, delete users and updated their details**.

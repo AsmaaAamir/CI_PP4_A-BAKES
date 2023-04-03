@@ -3,20 +3,18 @@
 
 
 <div class="recipe-hero-continer">
-   <div>
-     <!--Recipe heading -->
-    <h1 class="recipe-title">{{ post.title }}</h1>
-   </div>
    <div class="welcome-image">
-    <!--Welcoming feature images -->
-    {% if "blog_image" in post.featured_image.url  %}
-    <img src="#" width="100%">
-    {% else %}
-    <img src="{{ post.featured_image.url }}" width="100%">
-    {% endif %}
+        <!--Welcoming feature images -->
+        {% if "blog_image" in post.featured_image.url  %}
+        <img src="" width="100%">
+        {% else %}
+        <img src="{{ post.featured_image.url }}" width="100%">
+        {% endif %}
+           <!--Recipe heading -->
+        <h1 class="recipe-title">{{ post.title }}</h1>
    </div>
 </div>
-<hr>
+<hr class="recipe-hr">
 <div class="recipe-container">
      <!-- Ingredient for the recipe -->
     <div class="ingredient-continer">
@@ -30,7 +28,7 @@
         {% if "blog_image" in post.featured_image.url  %}
         <img src="#" width="100%">
         {% else %}
-        <img src="{{ post.featured_image2.url }}" width="75%">
+        <img src="{{ post.featured_image2.url }}" width="75%" height="900px">
         {% endif %}
     </div>
      <!-- Instruction for the recipe -->
