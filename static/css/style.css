@@ -28,9 +28,14 @@ main{
 
 /*-------- NavBar & Logo----------*/
 
-.home-link {
+.home-link a {
   font-size: 40px;
-  font-family: 'Dancing Script'
+  font-family: 'Dancing Script', sans-serif;
+  font-weight: bolder;
+  color: #aa3e98ff;
+  font-size: 40px;
+  line-height: 80px;
+  text-decoration: none;
 }
 .container {
   max-width: 1000px;
@@ -76,6 +81,8 @@ main{
   width: 100%;
   padding: 0.4em 0.8em;
   border-radius: 5px;
+  color: #9368b7ff;
+  font-size: 20px;
 }
 
 .navbar-link:is(:focus, :hover) {
