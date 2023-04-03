@@ -190,8 +190,19 @@ main{
   max-width: 100vw;
   height: 100vh;
 }
-
-/*-------- General CSS ----------*/
+/* ------------------ Register Page -------------------- */
+.reg-container{
+  display: block;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+form button{
+  margin: auto;
+}
 /* ------------------ Login Page -------------------- */
 .login-container{
   display: block;
@@ -209,6 +220,21 @@ main{
   background-size: cover;
   max-width: 100vw;
   height: 100vh;
+}
+/* ------------------ Log out Page -------------------- */
+.logout-container{
+  max-width: 500px;
+  margin: auto;
+  padding: 40px;
+  position: relative;
+  top: 100px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+}
+.logout-container h1 {
+  font-family: 'Dancing Script', sans-serif;
+  color:#aa3e98ff;
 }
 /* ------------------ Gallary Page -------------------- */
 .gallary-container{
