@@ -325,22 +325,97 @@ main{
   background-color:rgb(235, 116, 215)
 }
 /* ------------------ Login Page -------------------- */
-.login-container{
-  display: block;
-  margin-top: auto;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-  background-color: rgba(0, 0, 0, 0.1);
+.login-container {
+  position: relative;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px 100px;
+}
+.login-container:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://res.cloudinary.com/doow4kmj4/image/upload/v1680513917/CI_PP4_A-BAKES/login-bg_yudws0.jpg");
+  background-size: cover;
+  z-index: -1;
+  filter: blur(2px);
+}
+.login-box{
+  max-width: 850px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  column-gap: 5%;
+}
+.login-form-box a {
+  text-decoration: none;
+}
+.login-img{
+  height: 100%;
+  width: 500px;
+  background-image: url("https://res.cloudinary.com/doow4kmj4/image/upload/v1680513032/CI_PP4_A-BAKES/login-img_w7dz38.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
   border-radius: 10px;
 }
-.login-image{
-  background-image: url('https://res.cloudinary.com/doow4kmj4/image/upload/v1680495436/CI_PP4_A-BAKES/15_xh7hxa.jpg');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  max-width: 100vw;
-  height: 100vh;
+.logint-form-box{
+  padding:25px 50px;
+  
+}
+.login-form-box hr{
+  color: black;
+  height: 5px;
+}
+.login-form-box h1{
+  font-size: 70px;
+  font-weight: bolder;
+  color: rgb(41, 9, 35);
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+.login {
+  size: 35px;
+  color:#aa3e98ff; ;
+}
+.login-text{
+  font-family: 'Indie Flower', sans-serif;
+  font-size: 25px;
+  color:white;
+}
+.login-form-box p span{
+  color: rgb(41, 9, 35);
+}
+.login-form-box p{
+  font-size: 25px;
+  color:white;
+}
+.login_form input{
+  width: 100%;
+  padding: 8px 16px;
+  margin-bottom: 22px;
+}
+.login+form input:hover{
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.login_form button{
+  width: 100%;
+  font-size: 20px;
+  padding: 8px 16px;
+  margin-bottom: 22px;
+  outline: none;
+  border: none;
+}
+.login_form button:hover{
+  background-color:rgb(235, 116, 215)
 }
 /* ------------------ Log out Page -------------------- */
 .logout-container{
@@ -414,7 +489,6 @@ main{
 }
 /* ------------------ Contact Page -------------------- */
 .contact-container {
- 
   position: relative;
   display:flex;
   justify-content: center;
@@ -490,7 +564,6 @@ main{
 }
 /* ------------------ Footer -------------------- */
 footer{
-  background: transparent !important;
   height: 180px;
   clear: both;
   padding-top: 10px;
@@ -500,36 +573,24 @@ footer h3{
   color:#aa3e98ff;
 }
 .social{
-text-align: center;
+  text-align: center;
 }
 .social ul li{
   display: inline-block;
   list-style: none;
-  padding: 10px;
+  padding: 8px;
 }
+.social ul li a{
+  color: #d1205e;}
+
 .soical a{
-  color: darkcyan;
   font-size: 25px;
   margin: 0 25px;
   align-items: center;
 }
-.short-link ul {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding: 0;
-  list-style: none;
-  text-align: center;
-}
-.short-link a{
-  color: darkcyan;
-  text-decoration: none;
-}
-.short-link ul li {
-  display: inline-block;
-}
 footer p{
-  margin-top: 15px;
+  margin-top: 10px;
   text-align: center;
   font-size: 20px;
-  color: rgb(7, 89, 89);
+  color:rgb(138, 19, 75);
 }
