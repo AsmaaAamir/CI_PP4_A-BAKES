@@ -8,15 +8,34 @@
         {% if "blog_image" in post.featured_image.url  %}
         <img src="" width="50%">
         {% else %}
-        <img src="{{ post.featured_image.url }}" width="50%" class="d-flex justify-md-center">
+        <img src="{{ post.featured_image.url }}" width="50%">
         {% endif %}
            <!--Recipe heading -->
         <h1 class="recipe-title">{{ post.title }}</h1>
-        <div>
+        <div class="recipe-like-comment">
              <!-- Number of Likes -->
-            <span class="like-comment-icon"><i class="far fa-heart"></i>
-                {{ post.number_of_likes }}
-            </span>
+             <div class="row">
+                <div class="col-1">
+                    <strong>
+                        {%  if user.is_authenticated %}
+                        <form class="d-inline"  action="{% url 'post_like' post.slug %}" method="POST">
+                            {% csrf_token %}
+                            {% if liked %}
+                            <button type="submit" name="blogpost-id" value="{{post.slug}}" class="like-btn">
+                                <i class="fas fa-heart"></i>
+                            </button> 
+                            {% else %}
+                            <button type="submit" name="blogpost-id" value="{{post.slug}}" class="like-btn">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            {% endif %} 
+                        </form>
+                        {%  else %}
+                        <span class="like-comment-icon"><i class="far fa heart"></i>
+                        {% endif %}
+                    </strong>
+                </div>
+            </div>
             <!-- Number of comments -->
             <span>
                  {% with comments.count as total_comments %}
@@ -27,7 +46,6 @@
             </span>
         </div>
    </div>
-   <hr class="recipe-hr">
     <div class="recipe-container">
         <!-- Ingredient for the recipe -->
         <div class="ingredient-continer">
@@ -40,14 +58,13 @@
         {% if "blog_image" in post.featured_image.url  %}
         <img src="#" width="100%">
         {% else %}
-        <img src="{{ post.featured_image2.url }}" width="50%" height="30%" class="d-flex justify-md-center">
+        <img src="{{ post.featured_image2.url }}" width="50%" height="30%">
         {% endif %}
     </div>
      <!-- Instruction for the recipe -->
      <hr>
     <div class="instruction-continer">
         <p class="card-text">
-           
             {{ post.instruction_content | safe }}
         </p>
     </div>
@@ -56,32 +73,8 @@
         {% if "blog_image" in post.featured_image.url  %}
         <img src="#" width="100%">
         {% else %}
-        <img src="{{ post.featured_image3.url }}" width="50%" class="d-flex justify-md-center">
+        <img src="{{ post.featured_image3.url }}" width="50%" >
         {% endif %}
-    </div>
-    <!-- Number of likes -->
-    <div class="row">
-        <div class="col-1">
-            <strong>
-                {%  if user.is_authenticated %}
-                <form class="d-inline"  action="{% url 'post_like' post.slug %}" method="POST">
-                    {% csrf_token %}
-                    {% if liked %}
-                    <button type="submit" name="blogpost-id" value="{{post.slug}}" class="like-btn">
-                        <i class="fas fa-heart"></i>
-                    </button> 
-                    {% else %}
-                    <button type="submit" name="blogpost-id" value="{{post.slug}}" class="like-btn">
-                        <i class="far fa-heart"></i>
-                    </button>
-                    {% endif %} 
-                </form>
-                {%  else %}
-                <span class="like-comment-icon"><i class="far fa heart"></i>
-                {% endif %}
-
-            </strong>
-        </div>
     </div>
 </div>
 <hr>
@@ -114,7 +107,7 @@
 
             <h3>Leave a comment:</h3>
             <p>Posting as: {{ user.username }}</p>
-            <form method="post" style="margin-top:1.3em;">
+            <form method="post" style="margin-top: 1.3em;">
             {{ comment_form | crispy }}
             {% csrf_token %}
             <button type="submit" class="@btn btn-signup btl-lg">Submit</button>

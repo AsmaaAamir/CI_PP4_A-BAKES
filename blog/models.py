@@ -7,12 +7,10 @@ from cloudinary.models import CloudinaryField
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
-"""
-    This is the Model for the recipe post
-"""
-
-
 class Post(models.Model):
+    """
+    This is the Model for the recipe post
+    """
     title = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(max_length=100, unique=True)
     featured_image = CloudinaryField('image', default='blog_image')
@@ -27,7 +25,7 @@ class Post(models.Model):
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
 
     class Meta:
-        ordering = ['-created_on']
+        ordering = ["-created_on"]
 
     def __str__(self):
         return self.title
@@ -37,7 +35,7 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments")
     name = models.CharField(max_length=100)
     email = models.EmailField()
     body = models.TextField()
@@ -45,7 +43,7 @@ class Comment(models.Model):
     approved = models.BooleanField(default=False)
 
     class Meta:
-        ordering = ['created_on']
+        ordering = ["created_on"]
 
     def __str__(self):
-        return f"comment {self.body} by {self.name}"
+        return f"Comment {self.body} by {self.name}"

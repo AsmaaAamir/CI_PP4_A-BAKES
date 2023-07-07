@@ -274,6 +274,9 @@ h3 {
   width: 50%;
   margin: auto;
 }
+.recipe-like-comment{
+  text-align: center;
+}
 .recipe-container img{
   align-items: center;
 }
