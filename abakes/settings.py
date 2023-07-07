@@ -32,10 +32,10 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
-ALLOWED_HOSTS = ['ci-pp4-a-abakes.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ["ci-pp4-a-abakes.herokuapp.com", "localhost", "8000-asmaaaamir-cipp4abakes-jetjum0pkgm.ws-eu101.gitpod.io"]
 
 
 # Application definition

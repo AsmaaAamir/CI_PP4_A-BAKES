@@ -1,40 +1,36 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
-<div class="blog-container">
-    <div class="row">
-<!--Blog's entries column -->        
-        <div class="'col-12 mt-3 left">
-            <div class="row">
-                {% for post in post_list %}
-                <div class="col-md-4">
-                    <div class="card md-4">
-                        <div class="card-body">
-                            <div class="img-container">
-                                {% if "blog_image" in post.featured_images.url %}
-                                <img class ="card-img" src="#">
-                                {% else %}
-                                <img class="card-img" src="{{ post.featured_image.url }}">
-                                {% endif %}
-                            </div>
-                            <a href="{% url 'recipe' post.slug %}" class="post-link">
-                                <h3 class="card-tilte">{{ post.title}}</h3>
-                            </a>
-                            <p class="card-text"> {{ post.excerpt }}</p>
-                            <hr>
-                            <p class="card-text text-muted h6">{{ post.created_on }} 
-                                <i class="far fa-heart"></i> {{ post.number_of_likes }} </p>
-                        </div>
-                    </div>
+<div class="blog-container col-11">
+    <div class="card-body">
+        <div class="row">
+            {% for post in post_list %}
+            <img class="card-img" src="{{ post.featured_image.url }}">
+            <div class="card-body text-center">
+                <h3 class="card-title">
+                    {{ post.title }} 
+                </h3>
+                <div class="card-body">
+                    <p class="card-text font-weight-bold"> {{ post.excerpt }}</p>
                 </div>
-                {% if forloop.counter|divisibleby:3 %}
-                </div>
-                <div class="row">
-                {% endif %}
-                {% endfor %}
+                <p class="card-text text-muted h6">{{ post.created_on }}
+                    <hr>
+                <i class="far fa-heart likes pb-3"></i>
+                {{ post.number_of_likes }}
+                <i class="fas fa-comments comment"></i>
+                {{ comment.comment_count }}
             </div>
         </div>
     </div>
+</div>
+    {% if forloop.counter|divisibleby:3 %}
+    </div>
+    <div class="row">
+        {% endif %}
+        {% endfor %}
+
+
 <!-- Paginated posts-->
 {% if is_paginated %}
 <nav aria-label="Page navigation">
@@ -48,6 +44,5 @@
     </ul>
 </nav>
 {% endif %}
-
 </div>
 {% endblock content %}
