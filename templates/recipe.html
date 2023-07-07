@@ -18,11 +18,11 @@
                 <div class="col-1">
                     <strong>
                         {%  if user.is_authenticated %}
-                        <form class="d-inline"  action="{% url 'post_like' post.slug %}" method="POST">
+                        <form   action="{% url 'post_like' post.slug %}" method="POST">
                             {% csrf_token %}
                             {% if liked %}
-                            <button type="submit" name="blogpost-id" value="{{post.slug}}" class="like-btn">
-                                <i class="fas fa-heart"></i>
+                            <button  type="submit" name="blogpost-id" value="{{post.slug}}" class="like-btn ">
+                                <i  class="fas fa-heart"></i>
                             </button> 
                             {% else %}
                             <button type="submit" name="blogpost-id" value="{{post.slug}}" class="like-btn">
@@ -31,7 +31,7 @@
                             {% endif %} 
                         </form>
                         {%  else %}
-                        <span class="like-comment-icon"><i class="far fa heart"></i>
+                        <span class="like-comment-icon"><i class="far fa-heart"></i>
                         {% endif %}
                     </strong>
                 </div>

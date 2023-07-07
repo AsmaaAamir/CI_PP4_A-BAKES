@@ -277,6 +277,9 @@ h3 {
 .recipe-like-comment{
   text-align: center;
 }
+.like-btn {
+  text-align: center;
+}
 .recipe-container img{
   align-items: center;
 }
