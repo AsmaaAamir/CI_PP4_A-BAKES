@@ -9,13 +9,13 @@
             <img class="card-img" src="{{ post.featured_image.url }}">
             <div class="card-body text-center">
                 <h3 class="card-title">
-                    {{ post.title }} 
+                   <a href="{% url 'recipe' post.slug %}">{{ post.title }}  </a> 
                 </h3>
                 <div class="card-body">
                     <p class="card-text font-weight-bold"> {{ post.excerpt }}</p>
                 </div>
                 <p class="card-text text-muted h6">{{ post.created_on }}
-                    <hr>
+                
                 <i class="far fa-heart likes pb-3"></i>
                 {{ post.number_of_likes }}
                 <i class="fas fa-comments comment"></i>

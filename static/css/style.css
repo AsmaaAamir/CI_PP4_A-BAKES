@@ -249,11 +249,21 @@ main{
   width: 30%;
   height: 30%;
 }
-.card-body a {
+.card-title a{
   text-decoration: none;
   color: #1abc9c;
 }
+h3 {
+  text-decoration: none;
+  color: #1abc9c;
+}
+
 /* ------------------   Recipe Page -------------------- */
+.recipe-hero-continer{
+  padding-left:10%;
+  padding-right:10%;
+
+}
 .recipe-title{
     text-align: center;
     font-family: 'DANCING SCRIPT';

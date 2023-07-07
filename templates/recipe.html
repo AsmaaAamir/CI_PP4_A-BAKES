@@ -6,29 +6,41 @@
    <div class="welcome-image">
         <!--Welcoming feature images -->
         {% if "blog_image" in post.featured_image.url  %}
-        <img src="" width="100%">
+        <img src="" width="50%">
         {% else %}
-        <img src="{{ post.featured_image.url }}" width="100%">
+        <img src="{{ post.featured_image.url }}" width="50%" class="d-flex justify-md-center">
         {% endif %}
            <!--Recipe heading -->
         <h1 class="recipe-title">{{ post.title }}</h1>
+        <div>
+             <!-- Number of Likes -->
+            <span class="like-comment-icon"><i class="far fa-heart"></i>
+                {{ post.number_of_likes }}
+            </span>
+            <!-- Number of comments -->
+            <span>
+                 {% with comments.count as total_comments %}
+                <strong class="like-comment-icon"><i class="far fa-comments"></i>
+                    {{ total_comments }}
+                </strong>
+            {% endwith %} 
+            </span>
+        </div>
    </div>
-</div>
-<hr class="recipe-hr">
-<div class="recipe-container">
-     <!-- Ingredient for the recipe -->
-    <div class="ingredient-continer">
-        <p class="card-text">
-           
+   <hr class="recipe-hr">
+    <div class="recipe-container">
+        <!-- Ingredient for the recipe -->
+        <div class="ingredient-continer">
+            <p class="card-text">
             {{ post.ingredient_content | safe }}
-        </p>
-    </div>
+            </p>
+        </div>
     <div class="recipe-image">
         <!-- Images -->
         {% if "blog_image" in post.featured_image.url  %}
         <img src="#" width="100%">
         {% else %}
-        <img src="{{ post.featured_image2.url }}" width="75%" height="900px">
+        <img src="{{ post.featured_image2.url }}" width="50%" height="30%" class="d-flex justify-md-center">
         {% endif %}
     </div>
      <!-- Instruction for the recipe -->
@@ -44,7 +56,7 @@
         {% if "blog_image" in post.featured_image.url  %}
         <img src="#" width="100%">
         {% else %}
-        <img src="{{ post.featured_image3.url }}" width="75%">
+        <img src="{{ post.featured_image3.url }}" width="50%" class="d-flex justify-md-center">
         {% endif %}
     </div>
     <!-- Number of likes -->
@@ -69,17 +81,6 @@
                 {% endif %}
 
             </strong>
-            <span class="like-comment-icon"><i class="far fa heart"></i>
-            {{ post.number_of_likes }}
-            </span>
-        </div>
-     <!-- Number of comments -->
-        <div class="col-1">
-            {% with comments.count as total_comments %}
-                <strong class="like-comment-icon"><i class="far fa comments"></i>
-                    {{ total_comments }}
-                </strong>
-            {% endwith %}
         </div>
     </div>
 </div>
