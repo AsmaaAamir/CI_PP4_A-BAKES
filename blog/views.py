@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
+from django.contrib.auth.decoraors import login_requied
 from .models import Post
 from .forms import CommentForm
 
@@ -85,6 +86,15 @@ class PostLike(View):
         else:
             post.likes.add(request.user) 
         return HttpResponseRedirect(reverse('recipe', args=[slug]))
+
+
+
+@login_requied 
+class AddPost(generic.ListView):
+    """
+    Adding a recipe to the list of post
+    """
+    
 
 
 class LoginPage(generic.ListView):
