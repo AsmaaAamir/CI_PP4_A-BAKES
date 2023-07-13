@@ -1,9 +1,11 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from django.contrib.auth.decoraors import login_requied
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from .models import Post
-from .forms import CommentForm
+from .forms import CommentForm, AddPostFrom
+
 
 # Create your views here.
 
@@ -44,7 +46,8 @@ class PostDetail(View):
 
     def post(self, request, slug, *args, **kwargs):
         """
-        Comment section in each post, so user can see the posted Comments that have been approved by the admin
+        Comment section in each post, so user can see the posted Comments that
+        have been approved by the admin
         """
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
@@ -77,7 +80,9 @@ class PostDetail(View):
 
 
 class PostLike(View):
-
+    """
+    user can view number of likes on a posts
+    """
     def post(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
 
@@ -88,14 +93,33 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('recipe', args=[slug]))
 
 
-
-@login_requied 
+@login_required 
 class AddPost(generic.ListView):
     """
     Adding a recipe to the list of post
     """
-    
+    def get(self, request):
+        if request.method == 'POST':
+            form = AddPostFrom(request.POST, request.FILES or None)
 
+            if form.is_valid():
+                data = form.save(commit=False)
+                data.author = request.user
+                data.save()
+                messages.success(
+                    request, 'Your recipe has been posted sucessfully. Thank you we cannot wait to try it !'
+                )
+                return redirect(reverse('PostList'))
+            else: 
+                form = AddPostFrom
+            
+            return render( 
+                request, 'addpost.html', 
+                {
+                    'form': form,
+                    'author': 'Add Post'}
+            )
+  
 
 class LoginPage(generic.ListView):
     """

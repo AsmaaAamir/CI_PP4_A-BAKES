@@ -14,6 +14,7 @@ class Post(models.Model):
     title = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(max_length=100, unique=True)
     featured_image = CloudinaryField('image', default='blog_image')
+    author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     excerpt = models.TextField(blank=True)
     ingredient_content = models.TextField()
     featured_image2 = CloudinaryField('image2', default='blog_image')
@@ -23,6 +24,7 @@ class Post(models.Model):
     featured_image3 = CloudinaryField('images', default='blog_image')
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
+    
 
     class Meta:
         """
