@@ -9,7 +9,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 class Post(models.Model):
     """
-    This is the Model for the recipe post
+    This is class based function to created a recipe post
     """
     title = models.CharField(max_length=100, unique=True)
     slug = models.SlugField(max_length=100, unique=True)
@@ -25,18 +25,27 @@ class Post(models.Model):
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
 
     class Meta:
+        """
+        The recipe posts are listed in descending order by the date they were published. 
+        """
         ordering = ["-created_on"]
 
     def __str__(self):
+        """
+        Return a string of the title of the recipes
+        """
         return self.title
 
     def number_of_likes(self):
+        """
+        Shows the number if likes on the recipes 
+        """
         return self.likes.count()
 
 
 class Comment(models.Model):
     """
-    Model file for comment so user can add comment to post
+    Class based fucntion for comment so user can add comment to post
     """
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments")
     name = models.CharField(max_length=100)
@@ -46,7 +55,13 @@ class Comment(models.Model):
     approved = models.BooleanField(default=False)
 
     class Meta:
+        """
+        Order of teh comemtn posted on recipes in acending order
+        """
         ordering = ["created_on"]
 
     def __str__(self):
+        """
+        Return a string that shows the comment and its author 
+        """
         return f"Comment {self.body} by {self.name}"
