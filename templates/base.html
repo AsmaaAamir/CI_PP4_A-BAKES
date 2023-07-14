@@ -52,6 +52,9 @@
             </li>
             {% if user.is_authenticated %}
             <li class="navbar-item">
+                <a class="navbar-link" href="{% url 'addpost' %}">Post Recipe</a>
+            </li>
+            <li class="navbar-item">
                 <a class="navbar-link" href="{% url 'account_logout' %}">Logout</a>
             </li>
             {% else %}

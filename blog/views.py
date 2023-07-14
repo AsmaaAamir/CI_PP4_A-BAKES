@@ -1,30 +1,42 @@
+# Imports
+# 3rd party:
+# ---------------------
 from django.shortcuts import render, get_object_or_404, reverse, redirect
-from django.views import generic, View
+from django.views.generic import ListView
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+
+# Internal:
+# --------------------
 from .models import Post
-from .forms import CommentForm, AddPostFrom
+from .forms import CommentForm
 
 
 # Create your views here.
 
 
-class HomePage(generic.ListView):
+class HomePage(ListView):
     def get(self, request):
         return render(request, 'index.html')
 
 
-class PostList(generic.ListView):
+class PostList(ListView):
+    """
+    class-based view to list of recipes that have been posted
+    """
     model = Post
     queryset = Post.objects.filter(status=1).order_by("-created_on")
     template_name = "blog.html"
     paginate_by = 6
 
 
-class PostDetail(View):
+class PostDetail(ListView):
 
     def get(self, request, slug, *args, **kwargs):
+        """
+        Views the selected recipe from the blog page 
+        """
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by("-created_on")
@@ -93,35 +105,16 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('recipe', args=[slug]))
 
 
-@login_required 
-class AddPost(generic.ListView):
+@login_required
+class AddPost(ListVieW):
     """
-    Adding a recipe to the list of post
+    Login page can be viewed
     """
     def get(self, request):
-        if request.method == 'POST':
-            form = AddPostFrom(request.POST, request.FILES or None)
-
-            if form.is_valid():
-                data = form.save(commit=False)
-                data.author = request.user
-                data.save()
-                messages.success(
-                    request, 'Your recipe has been posted sucessfully. Thank you we cannot wait to try it !'
-                )
-                return redirect(reverse('PostList'))
-            else: 
-                form = AddPostFrom
-            
-            return render( 
-                request, 'addpost.html', 
-                {
-                    'form': form,
-                    'author': 'Add Post'}
-            )
+        return render(request, 'addpost.html')
   
 
-class LoginPage(generic.ListView):
+class LoginPage(ListView):
     """
     Login page can be viewed
     """
@@ -129,7 +122,7 @@ class LoginPage(generic.ListView):
         return render(request, 'login.html')
 
 
-class LogoutPage(generic.ListView):
+class LogoutPage(ListView):
     """
     Logout Page  can be viewed
     """
@@ -137,7 +130,7 @@ class LogoutPage(generic.ListView):
         return render(request, 'logout.html')
 
 
-class SignupPage(generic.ListView):
+class SignupPage(ListView):
     """
     Sign up page can be viewed
     """
@@ -145,7 +138,7 @@ class SignupPage(generic.ListView):
         return render(request, 'signup.html')
 
 
-class GallaryPage(generic.ListView):
+class GallaryPage(ListView):
     """
     Gallary  page can be viewed
     """
@@ -153,7 +146,7 @@ class GallaryPage(generic.ListView):
         return render(request, 'gallary.html')
 
 
-class ContactPage(generic.ListView):
+class ContactPage(ListView):
     """
     Contact Page  can be viewed
     """

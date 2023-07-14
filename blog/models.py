@@ -24,11 +24,10 @@ class Post(models.Model):
     featured_image3 = CloudinaryField('images', default='blog_image')
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
-    
 
     class Meta:
         """
-        The recipe posts are listed in descending order by the date they were published. 
+        The recipe posts are listed in descending order by the date they were published.
         """
         ordering = ["-created_on"]
 
@@ -40,7 +39,7 @@ class Post(models.Model):
 
     def number_of_likes(self):
         """
-        Shows the number if likes on the recipes 
+        Shows the number if likes on the recipes
         """
         return self.likes.count()
 

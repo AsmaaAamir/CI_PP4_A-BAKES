@@ -1,21 +1,13 @@
 {% extends "base.html" %}
 {% load static %}
-{%  load cripsy_forms_tags %}
+{% load crispy_forms_tags %}
 {% block content %}
 <!-- Add recipe post page -->
 <div class="container col-lg-8 col-md-10">
     <h2>Add a new <span>Recipe..</span></h2>
-    {% if user.is_authenticated %}
     <form method="POST" class="addpost" enctype="multipart/form-data">
         {% csrf_token %}
-        {% cripsy form %}
-        
-    </form>
-    {% else %}
-    <p>
-        You would need to sign in to add a recipe 
-        <a href="{{ login_url }}"><span class="signup_span">sign in</span></a>.
-    </p>    
-    {% endif %}
+        {% crispy forms %}
+    </form>  
 </div>
 {% endblock content %}

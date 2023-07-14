@@ -1,6 +1,11 @@
+# Import:
+# 3rd party:
+# ------------------------
 from django.urls import path
-from . import views
 
+# Internal 
+# ------------------------
+from blog import views
 
 urlpatterns = [
     path('', views.HomePage.as_view(), name='home'),
@@ -11,9 +16,6 @@ urlpatterns = [
     path('logout', views.LogoutPage.as_view(), name='logout'),
     path('signup', views.SignupPage.as_view(), name='signup'),
     path('gallary', views.GallaryPage.as_view(), name='gallary'),
-    path('contacy', views.ContactPage.as_view(), name='contact'),
-
-  
-
-   
+    path('contact', views.ContactPage.as_view(), name='contact'),
+    path('addpost', views.AddPost.as_view(), name='addpost'),
 ]
