@@ -5,7 +5,7 @@ from django.urls import path
 
 # Internal 
 # ------------------------
-from blog import views
+from . import views
 
 urlpatterns = [
     path('', views.HomePage.as_view(), name='home'),
@@ -17,5 +17,5 @@ urlpatterns = [
     path('signup', views.SignupPage.as_view(), name='signup'),
     path('gallary', views.GallaryPage.as_view(), name='gallary'),
     path('contact', views.ContactPage.as_view(), name='contact'),
-    path('addpost/recipe_id', views.addpost, name='addpost'),
+    path('addpost/recipe_id', views.AddPost.as_view(), name='addpost'),
 ]

@@ -10,7 +10,7 @@ from django.contrib import messages
 # Internal:
 # --------------------
 from .models import Post
-from .forms import AddPostForm, CommentForm
+from .forms import CommentForm
 
 
 # Create your views here.
@@ -90,18 +90,10 @@ class PostDetail(ListView):
             },
         )
 
-    def addpost(self, request):
-        """
-        Adding a post to the website
-        """
-        if request.method == "POST":
-            form = AddPostForm(request.POST, request.FILES)
 
-            if form.is_valid():
-                data = form.save(commit=False)
-                data.author = request.user
-                data.save()
-                return redirect(reverse('post_list'))
+class AddPost(ListView):
+    
+    def get(self, request):
         return render(request, 'addpost.html')
 
 
