@@ -10,6 +10,13 @@
         </div>
     </div>
 </div>
+
+<div>
+    <button>
+        <a href="{% url 'addpost' %}"> Add Recipe</a>
+    </button>
+</div>
+
 <!-- Recipe cards -->
 <div clas="card-body">
     <div class="row">
@@ -39,7 +46,10 @@
             </a>
             </div>
         </div>
+      
         {% endfor %}
+        
+         
     </div>
 </div>
 {% endblock content %}

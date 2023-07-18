@@ -2,7 +2,7 @@
 # 3rd party:
 # ---------------------
 from django.shortcuts import render, get_object_or_404, reverse, redirect
-from django.views.generic import ListView
+from django.views.generic import ListView, CreateView
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -10,7 +10,7 @@ from django.contrib import messages
 # Internal:
 # --------------------
 from .models import Post
-from .forms import CommentForm
+from .forms import AddPostForm, CommentForm
 
 
 # Create your views here.
@@ -90,8 +90,22 @@ class PostDetail(ListView):
             },
         )
 
+    def addpost(self, request):
+        """
+        Adding a post to the website
+        """
+        if request.method == "POST":
+            form = AddPostForm(request.POST, request.FILES)
 
-class PostLike(View):
+            if form.is_valid():
+                data = form.save(commit=False)
+                data.author = request.user
+                data.save()
+                return redirect(reverse('post_list'))
+        return render(request, 'addpost.html')
+
+
+class PostLike(ListView):
     """
     user can view number of likes on a posts
     """
@@ -105,15 +119,8 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('recipe', args=[slug]))
 
 
-@login_required
-class AddPost(ListVieW):
-    """
-    Login page can be viewed
-    """
-    def get(self, request):
-        return render(request, 'addpost.html')
-  
 
+  
 class LoginPage(ListView):
     """
     Login page can be viewed

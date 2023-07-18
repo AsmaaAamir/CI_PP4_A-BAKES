@@ -35,7 +35,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 
-ALLOWED_HOSTS = ["ci-pp4-a-abakes.herokuapp.com", "localhost", "8000-asmaaaamir-cipp4abakes-jetjum0pkgm.ws-eu101.gitpod.io"]
+ALLOWED_HOSTS = ["ci-pp4-a-abakes.herokuapp.com", "localhost", "8000-asmaaaamir-cipp4abakes-lwhrk9li0pm.ws-eu101.gitpod.io"]
 
 
 # Application definition
@@ -116,7 +116,6 @@ WSGI_APPLICATION = 'abakes.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
-
 }
 
 # Password validation

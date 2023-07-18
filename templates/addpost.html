@@ -4,10 +4,16 @@
 {% block content %}
 <!-- Add recipe post page -->
 <div class="container col-lg-8 col-md-10">
-    <h2>Add a new <span>Recipe..</span></h2>
+    <h2>Share your <span>Recipe..</span></h2>
+    {% if user.is_authenticated %}
     <form method="POST" class="addpost" enctype="multipart/form-data">
         {% csrf_token %}
-        {% crispy forms %}
-    </form>  
+        {{ form|crispy }}
+    </form>
+    {% else %}
+    <p>You need to sign in to share a recipe 
+        <span href="{% url 'account_login' %}">Sign In</span>
+    </p> 
+    {% endif %}
 </div>
 {% endblock content %}
