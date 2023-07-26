@@ -27,7 +27,8 @@ class Post(models.Model):
 
     class Meta:
         """
-        The recipe posts are listed in descending order by the date they were published.
+        The recipe posts are listed in descending order by the
+        date they were published.
         """
         ordering = ["-created_on"]
 
@@ -63,6 +64,6 @@ class Comment(models.Model):
 
     def __str__(self):
         """
-        Return a string that shows the comment and its author 
+        Return a string that shows the comment and its author
         """
         return f"Comment {self.body} by {self.name}"

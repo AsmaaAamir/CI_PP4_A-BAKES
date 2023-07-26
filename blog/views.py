@@ -10,13 +10,17 @@ from django.contrib import messages
 # Internal:
 # --------------------
 from .models import Post
-from .forms import CommentForm
+from .forms import AddPostForm, CommentForm
 
 
 # Create your views here.
 
 
 class HomePage(ListView):
+    """
+    class-based function so the home page
+    can be displayed.
+    """
     def get(self, request):
         return render(request, 'index.html')
 
@@ -35,7 +39,7 @@ class PostDetail(ListView):
 
     def get(self, request, slug, *args, **kwargs):
         """
-        Views the selected recipe from the blog page 
+        Views the selected recipe from the blog page
         """
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
@@ -92,8 +96,33 @@ class PostDetail(ListView):
 
 
 class AddPost(ListView):
-    
-    def get(self, request):
+    """
+    user can add recipe 
+    """
+    def addpostform(request):
+        if request.method == 'POST':
+            form = AddPostForm(request.POST, request.FILES)
+
+            if form.is_valid():
+                data = form.save(commit=False)
+                data.author = request.user
+                data.save()
+                return redirect(reverse('blog.html'))        
+        else:
+            form = AddPostForm()
+
+        return render(
+            request, 'addpost.html', {'form': form}
+        )
+        
+        
+        
+        
+        
+        
+        
+        
+        
         return render(request, 'addpost.html')
 
 
@@ -102,17 +131,19 @@ class PostLike(ListView):
     user can view number of likes on a posts
     """
     def post(self, request, slug):
+        """
+        alowing user to like post and advise if they have
+        already liked the post.
+        """
         post = get_object_or_404(Post, slug=slug)
 
         if post.likes.filter(id=request.user.id).exists():
             post.likes.remove(request.user)
         else:
-            post.likes.add(request.user) 
+            post.likes.add(request.user)
         return HttpResponseRedirect(reverse('recipe', args=[slug]))
 
 
-
-  
 class LoginPage(ListView):
     """
     Login page can be viewed

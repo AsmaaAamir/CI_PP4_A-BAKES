@@ -2,14 +2,16 @@
 # 3rd party:
 # ----------------------------------------------------------
 from django import forms
-from django_summernote.widgets import SummernoteWidget
 
 # Internal:
 # ------------------------------------
 from .models import Post, Comment
 
 
-
+class AddPostForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = ('title', 'body', 'feature_Image')
 
 class CommentForm(forms.ModelForm):
     """
