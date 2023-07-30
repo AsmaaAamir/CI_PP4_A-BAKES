@@ -99,31 +99,10 @@ class AddPost(ListView):
     """
     user can add recipe 
     """
-    def addpostform(request):
-        if request.method == 'POST':
-            form = AddPostForm(request.POST, request.FILES)
+    def get(self, request):
 
-            if form.is_valid():
-                data = form.save(commit=False)
-                data.author = request.user
-                data.save()
-                return redirect(reverse('blog.html'))        
-        else:
-            form = AddPostForm()
-
-        return render(
-            request, 'addpost.html', {'form': form}
-        )
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        return render(request, 'addpost.html')
+        form = AddPostForm()
+        return render(request, 'addpost.html', {"form": form})
 
 
 class PostLike(ListView):

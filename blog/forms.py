@@ -7,11 +7,14 @@ from django import forms
 # ------------------------------------
 from .models import Post, Comment
 
-
 class AddPostForm(forms.ModelForm):
+    title = forms.CharField(required=True)
+    body = forms.CharField(required=True)
+
     class Meta:
         model = Post
-        fields = ('title', 'body', 'feature_Image')
+        fields = ('title', 'body',)
+
 
 class CommentForm(forms.ModelForm):
     """
