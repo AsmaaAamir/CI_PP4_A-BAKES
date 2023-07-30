@@ -9,6 +9,7 @@
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form|crispy }}
+        <input type="submit">
     </form>
     {% else %}
     <p>You need to sign in to share a recipe 

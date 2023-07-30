@@ -101,7 +101,16 @@ class AddPost(ListView):
     """
     def get(self, request):
 
-        form = AddPostForm()
+        if request.method == 'POST':
+            form = AddPostForm(request.POST, request.FILES)
+
+            if form.is_valid():
+                add_post = form.save(commit=False)
+                add_post.save()
+                return redirect('blog.html')
+        else:
+            form = AddPostForm()
+
         return render(request, 'addpost.html', {"form": form})
 
 
