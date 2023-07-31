@@ -17,5 +17,5 @@ urlpatterns = [
     path('signup', views.SignupPage.as_view(), name='signup'),
     path('gallary', views.GallaryPage.as_view(), name='gallary'),
     path('contact', views.ContactPage.as_view(), name='contact'),
-    path('addpost/recipe_post', views.AddPost.as_view(), name='addpost'),
+    path('addpost/recipe_id', views.AddPost.as_view(), name='addpost'),
 ]

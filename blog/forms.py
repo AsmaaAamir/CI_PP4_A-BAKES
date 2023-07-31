@@ -16,7 +16,7 @@ class AddPostForm(forms.ModelForm):
     excerpt = forms.CharField(required=True)
     featured_image = forms.ImageField
     ingredient = forms.CharField(required=True)
-    featured_image = forms.ImageField
+    featured_image = forms.ImageField(required=False)
     instruction = forms.CharField(required=True)
 
     class Meta:
