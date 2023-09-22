@@ -105,7 +105,12 @@ class AddPost(ListView):
             form = AddPostForm(request.POST, request.FILES)
 
             if form.is_valid():
+                form = Post()
+                form.title = request.POST.get('title')
+                form.ingredient_content = request.POST.get('ingredient_content')
+                form.instruction_content = request.POST.get('instruction_content')
                 form.save()
+
         else:
             form = AddPostForm()
 

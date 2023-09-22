@@ -35,7 +35,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 
-ALLOWED_HOSTS = ["ci-pp4-a-abakes.herokuapp.com", "localhost", "8000-asmaaaamir-cipp4abakes-lwhrk9li0pm.ws-eu102.gitpod.io"]
+ALLOWED_HOSTS = ["ci-pp4-a-abakes.herokuapp.com", "localhost", "8000-asmaaaamir-cipp4abakes-zabqwnpfiez.ws-eu104.gitpod.io"]
 
 
 # Application definition
@@ -81,6 +81,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "allauth.account.middleware.AccountMiddleware",
 ]
 
 ROOT_URLCONF = 'abakes.urls'
