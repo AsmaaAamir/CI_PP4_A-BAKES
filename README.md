@@ -33,14 +33,20 @@ This project's goal was to create a full-stack Django application using the comp
 | 1 | Site user | Register for a account  | I can have the ability to comment on post, like posts and share my recipe. |
 | 2 | Site user | Login with my username and password  | I can utilise all of the website's features. |
 | 3 | Site user | Log-out of my account | other users cannot access my account |
-| 4 | Site user | Recover my password if i have forgotten | I can recover my account and access the site features | 
+| 4 | Site user | Recover my password if i have forgotten | I can recover my account and access the site features |
 | **Navigation** | | | |
 | 1 | Site user | I can access Nav Bar from any page |  I can choose go anywhere on the site |
 | **Post** | | | |
-| **Like** | | | |
-| **Comment** | | | |
+| 1 | Site user/ Guest user | View a list of post/ recipes | I am able to choose which recipes/post I would like to view| 
+| 2 | Site user/ Guest user | View a paginated list of posts | It doesn't get overpopulated with post |
+| 3 | Site user/ Guest user | Click on a post | I can read the full recipe and see If would like to create it | 
+| 4 | Logged-In user | post my recipes | I can share my recipe on teh site for other user to view |
+| 5 | Logged-In user | edit my post/ recipe | I can make any change if I made a error or update a recipe |  
+| 6 | Logged-In user | delete my post/ recipe | I can remove the reciped If i dont wish to shre it anymore | 
+| 7 | Logged-In user | Like a post/ recipe | I can show my love to recipe |
+| 8 | Logged-In user | leave a comment on a post/ recipe| I can be involoved in the converation and express my opnion on the recipe |
 | **Site Admin** | | | |
-
+| 1 | | | | 
 
 
 
@@ -62,7 +68,6 @@ This project's goal was to create a full-stack Django application using the comp
         - User looking for a kind and supportive community that recently took up baking.
 
 ### 3. Post
-    1:As a **site user/guest** I can **paginated list of post ** so that **I am able to choose which recipes I want**.
     2:As a **site user** I can **like a post ** so that **I can show my love for the post to admin and other users**.
     3:As a **site user** I can **comment on a post ** so that **I can give my opion on how I founf teh recipe and other care read my comment and interact with me**.
     4:As a **site user** I can **see number of likes and comments ** so that **I can see the most popular recipe **.
