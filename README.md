@@ -22,7 +22,21 @@ This project's goal was to create a full-stack Django application using the comp
 6. [Credits](#credits)
 7. [Acknowledgements](#acknowledgements)
 
+# 1. User Experience (UX)
+###  Project Goals:
+- The project's objective is to provide a platform that will enable the website owner to share her recipes with the entire world. Bring together a community that enjoys baking. A forum where they can converse, exchange recipes, and express their passion for baking.
 
+### Site owner goal:
+- Provide a platform that is user-friendly and open to everyone.
+- A website that needs to look good across all screen sizes.
+- Allows the website owner to change the existing or previous recipes
+- Allows the site owner the ability to view the likes and comments to determine which content is the most popular.
+
+### User goals:
+- The platform should be simple to use and straightforward for users.
+- User who love to Bake
+- Users who enjoy talking to others about recipes they've tried out from posts.
+- User looking for a kind and supportive community that recently took up baking.
 
 ## i. Strategy 
 
@@ -54,22 +68,21 @@ This project's goal was to create a full-stack Django application using the comp
 
 
 
+# 5. Tecnologies Used
+## Languages 
+- Django 
+- HTML
+- CSS 
 
-
-    - Project Goals:
-        - The project's objective is to provide a platform that will enable the website owner to share her recipes with the entire world. Bring together a community that enjoys baking. A forum where they can converse, exchange recipes, and express their passion for baking.
-         
-    - Site owner goal:
-        - Provide a platform that is user-friendly and open to everyone.
-        - A website that needs to look good across all screen sizes.
-        - Allows the website owner to change the existing or previous recipes
-        - Allows the site owner the ability to view the likes and comments to determine which content is the most popular.
-
-    - User goals:
-        - The platform should be simple to use and straightforward for users.
-        - User who love to Bake
-        - Users who enjoy talking to others about recipes they've tried out from posts.
-        - User looking for a kind and supportive community that recently took up baking.
+## Applications, Platforms
+- Bootstrap:
+- Git Pod:
+- GitHub:
+- Postgres:
+- Balsamiq Wireframe: This was used to create the wireframes for this rpoject diplaying in the Skeleton Plane. 
+- Am I Responsive: 
+- Google Font:
+- 
 
 ### Future Improvements
 I would like to implement a number of functionality upgrades in the future. I was unable to complete my project because of a personal situation. But here is what I would have added:
