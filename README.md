@@ -5,10 +5,49 @@
 A'kitchen is a web application that allows the target audience to browse & create recipes and engage in conversations with other users who are also authenticated on the website. A'Kitchen allows users to like and comment on recipes. 
 This project's goal was to create a full-stack Django application using the computer languages Python, HTML, CSS, JavaScript, and Bootstrap. It makes use of CRUD capability so that authorised users may add expedition reviews to the website and create, browse, amend, and delete them. User registration and sign-in are implemented using the allauth Django package.
 
-## Table of Contents
-- User Experience (UX)
+# Table of Contents
+1. [User Experience (UX)](#user-experience)<br>
+    i. [Strategy](#strategy)<br>
+    ii. [Scope](#scope)<br>
+    iii. [Structure](#struture)<br>
+    iv. [Skeleton/WireFrame](#skeleton)<br>
+    v. [Surface](#surface)<br>
+2. [Features](#feature)
+3. [Testing](#testing)<br>
+    - [User Stories](#user-stories)
+    - [Automated Testing](#automated-testing)
+    - [Validation testing](#validation)
+4. [Deployment](#deployment)
+5. [Tecnologies Used](#tecnology-used)
+6. [Credits](#credits)
+7. [Acknowledgements](#acknowledgements)
+
+
+
+## i. Strategy 
+
+## User Stories- Agile Methodology 
+| **User Story** | **As a:** | **I can:** | **So that:** |
+| ------ | ----- | ------ | ------ |
+| **Account & Registration** | | | |
+| 1 | Site user | Register for a account  | I can have the ability to comment on post, like posts and share my recipe. |
+| 2 | Site user | Login with my username and password  | I can utilise all of the website's features. |
+| 3 | Site user | Log-out of my account | other users cannot access my account |
+| 4 | Site user | Recover my password if i have forgotten | I can recover my account and access the site features | 
+| **Navigation** | | | |
+| 1 | Site user | I can access Nav Bar from any page |  I can choose go anywhere on the site |
+| **Post** | | | |
+| **Like** | | | |
+| **Comment** | | | |
+| **Site Admin** | | | |
+
+
+
+
+
+
     - Project Goals:
-        > The project's objective is to provide a platform that will enable the website owner to share her recipes with the entire world. Bring together a community that enjoys baking. a forum where they can converse, exchange recipes, and express their passion for baking.
+        - The project's objective is to provide a platform that will enable the website owner to share her recipes with the entire world. Bring together a community that enjoys baking. A forum where they can converse, exchange recipes, and express their passion for baking.
          
     - Site owner goal:
         - Provide a platform that is user-friendly and open to everyone.
@@ -22,14 +61,6 @@ This project's goal was to create a full-stack Django application using the comp
         - Users who enjoy talking to others about recipes they've tried out from posts.
         - User looking for a kind and supportive community that recently took up baking.
 
-## User stories 
-### 1. Account Management
-    1:  As a **site user** I can ** register ** so that **have the ability to comment on posts and vote on them, as well as a role-based login.**.
-    2: As a **site user** I can **login with my username and password** so that **Ican utilise all of the website's features.**. 
-    3: As a **site user** I can **log out** so that **my information stay safe**.
-### 2. Navigation
-    1: As a **site user** I can **click on menu** so that **I am able to choose which page to go to**.
-    2:As a **site user** I can **locate the social media accounts** so that **I can follow their touch with admin and other user**.
 ### 3. Post
     1:As a **site user/guest** I can **paginated list of post ** so that **I am able to choose which recipes I want**.
     2:As a **site user** I can **like a post ** so that **I can show my love for the post to admin and other users**.

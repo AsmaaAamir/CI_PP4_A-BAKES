@@ -35,7 +35,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 
-ALLOWED_HOSTS = ["ci-pp4-a-abakes.herokuapp.com", "localhost", "8000-asmaaaamir-cipp4abakes-zabqwnpfiez.ws-eu104.gitpod.io"]
+ALLOWED_HOSTS = ["ci-pp4-a-abakes.herokuapp.com", "localhost", "8000-asmaaaamir-cipp4abakes-zabqwnpfiez.ws-eu105.gitpod.io"]
 
 
 # Application definition
