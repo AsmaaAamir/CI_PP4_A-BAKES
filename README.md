@@ -46,7 +46,11 @@ This project's goal was to create a full-stack Django application using the comp
 | 7 | Logged-In user | Like a post/ recipe | I can show my love to recipe |
 | 8 | Logged-In user | leave a comment on a post/ recipe| I can be involoved in the converation and express my opnion on the recipe |
 | **Site Admin** | | | |
-| 1 | | | | 
+| 1 | Site admin | create, edit and delete post on the Django admin | I can manage the site for the best User Experiene | 
+| 2 | Site admin | approve and delete comments the Django admin | I can filter out the comment for best  User Experience |
+| 3 | Site admin | manage user  account  | I can create new users, update current user details or deactive user status |
+
+
 
 
 
@@ -66,16 +70,6 @@ This project's goal was to create a full-stack Django application using the comp
         - User who love to Bake
         - Users who enjoy talking to others about recipes they've tried out from posts.
         - User looking for a kind and supportive community that recently took up baking.
-
-### 3. Post
-    2:As a **site user** I can **like a post ** so that **I can show my love for the post to admin and other users**.
-    3:As a **site user** I can **comment on a post ** so that **I can give my opion on how I founf teh recipe and other care read my comment and interact with me**.
-    4:As a **site user** I can **see number of likes and comments ** so that **I can see the most popular recipe **.
-    5::As a **site user** I can **paginated list of comments ** so that ** I am not overwheml with so many comment on my screen**.
-### 4. Site Admin 
-    1:As a **site admin** I can **create, edit and delete post on the django admin** so that **I can manage the site**>
-    2:As a **site admin** I can **approve and delete comments the django admin** so that **I can filter out the comment for best UX**>
-    3::As a **site admin** I can **manage user** so that **I can create, delete users and updated their details**.
 
 ### Future Improvements
 I would like to implement a number of functionality upgrades in the future. I was unable to complete my project because of a personal situation. But here is what I would have added:
