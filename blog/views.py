@@ -6,6 +6,7 @@ from django.views.generic import ListView, CreateView
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.views.generic.edit import FormView
 
 # Internal:
 # --------------------
@@ -99,19 +100,23 @@ class AddPost(ListView):
     """
     user can add recipe 
     """
-    def get(self, request):
+    model = Post
+    form_class = AddPostForm
+    success_url = "blog/"
+    template_name = "addpost.html"
 
-        if request.method == "POST":
-            form = AddPostForm(request.POST, request.FILES)
+    def post(self, request, slug, *args, **kwargs):
+        form = AddPostForm(request.POST, request.FILES)
 
-            if form.is_valid():
-                form = form.save(commit=False)
-                form.save()
+        if form.is_valid():
+            form = form.save(commit=False)
+            form.save()
 
-        else:
-            form = AddPostForm()
+    def get(self, request, slug, *args, **kwargs):
+        form = AddPostForm()
 
         return render(request, 'addpost.html', {"form": form})
+
 
 
 class PostLike(ListView):
@@ -120,7 +125,7 @@ class PostLike(ListView):
     """
     def post(self, request, slug):
         """
-        alowing user to like post and advise if they have
+        aLlowing user to like post and advise if they have
         already liked the post.
         """
         post = get_object_or_404(Post, slug=slug)
