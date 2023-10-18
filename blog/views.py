@@ -113,7 +113,7 @@ class AddPost(ListView):
             form.slug = slugify(form.title)
             form.save()
 
-        return render(request, 'blog.html')
+            return redirect(reverse('blog'))
 
     def get(self, request, *args, **kwargs):
 
