@@ -7,6 +7,7 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.views.generic.edit import FormView
+from django.utils.text import slugify 
 
 # Internal:
 # --------------------
@@ -102,17 +103,20 @@ class AddPost(ListView):
     """
     model = Post
     form_class = AddPostForm
-    success_url = "blog/"
     template_name = "addpost.html"
 
-    def post(self, request, slug, *args, **kwargs):
+    def post(self, request, *args, **kwargs):
         form = AddPostForm(request.POST, request.FILES)
 
         if form.is_valid():
             form = form.save(commit=False)
+            form.slug = slugify(form.title)
             form.save()
 
-    def get(self, request, slug, *args, **kwargs):
+        return render(request, 'blog.html')
+
+    def get(self, request, *args, **kwargs):
+
         form = AddPostForm()
 
         return render(request, 'addpost.html', {"form": form})
