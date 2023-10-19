@@ -8,7 +8,7 @@
         {% if "blog_image" in post.featured_image.url  %}
         <img src="" width="50%">
         {% else %}
-        <img src="{{ post.featured_image.url }}" width="50%">
+        <img src="{{ post.featured_image.url }}" width="100%">
         {% endif %}
            <!--Recipe heading -->
         <h1 class="recipe-title">{{ post.title }}</h1>
@@ -58,7 +58,7 @@
         {% if "blog_image" in post.featured_image.url  %}
         <img src="#" width="100%">
         {% else %}
-        <img src="{{ post.featured_image2.url }}" width="50%" height="30%">
+        <img class="recipe-img" src="{{ post.featured_image2.url }}" width="50%" height="30%">
         {% endif %}
     </div>
      <!-- Instruction for the recipe -->
@@ -73,7 +73,7 @@
         {% if "blog_image" in post.featured_image.url  %}
         <img src="#" width="100%">
         {% else %}
-        <img src="{{ post.featured_image3.url }}" width="50%" >
+        <img class="recipe-img" src="{{ post.featured_image3.url }}" width="50%" >
         {% endif %}
     </div>
 </div>

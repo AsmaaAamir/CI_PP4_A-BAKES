@@ -112,15 +112,13 @@ class AddPost(ListView):
             form = form.save(commit=False)
             form.slug = slugify(form.title)
             form.save()
-
-            return redirect(reverse('blog'))
+        return redirect(reverse('blog'))
 
     def get(self, request, *args, **kwargs):
 
         form = AddPostForm()
 
         return render(request, 'addpost.html', {"form": form})
-
 
 
 class PostLike(ListView):
