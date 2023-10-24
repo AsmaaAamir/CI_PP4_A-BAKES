@@ -2,6 +2,7 @@
 # 3rd party:
 # ----------------------------------------------------------
 from django import forms
+from django_summernote.widgets import SummernoteInplaceWidget
 
 # Internal:
 # ------------------------------------
@@ -24,7 +25,11 @@ class AddPostForm(forms.ModelForm):
         defines post form meta include
         """
         model = Post
-        fields = ('title', 'excerpt', 'featured_image', 'ingredient', 'instruction',)
+        fields = ('title', 'excerpt', 'featured_image', 'ingredient', 'instruction')
+        widgets = {
+            'ingredient': SummernoteInplaceWidget(),
+            'instruction': SummernoteInplaceWidget()
+            }
 
 
 class CommentForm(forms.ModelForm):
