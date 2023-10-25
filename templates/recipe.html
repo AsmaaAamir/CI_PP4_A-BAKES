@@ -79,12 +79,12 @@
     <div>
         {% if user.is_authenticated %}
             {% if user.id == post.owner.id %}
-            <button> Update
-                <a herf="{% url 'editpost' post.pk %}"></a>  
-            </button>
-            <button> Delete
-                <a herf="{% url 'deletpost' post.pk %}"></a>  
-            </button>
+                <button> Update
+                    <a herf="{% url 'editpost' post.pk %}"></a>  
+                </button>
+                <button> Delete
+                    <a herf="{% url 'deletpost' post.pk %}"></a>  
+                </button>
             {% endif %}
         {% endif %}
     </div>
