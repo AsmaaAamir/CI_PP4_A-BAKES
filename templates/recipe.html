@@ -76,6 +76,18 @@
         <img class="recipe-img" src="{{ post.featured_image3.url }}" width="50%" >
         {% endif %}
     </div>
+    <div>
+        {% if user.is_authenticated %}
+            {% if user.id == post.owner.id %}
+            <button> Update
+                <a herf="{% url 'editpost' post.pk %}"></a>  
+            </button>
+            <button> Delete
+                <a herf="{% url 'deletpost' post.pk %}"></a>  
+            </button>
+            {% endif %}
+        {% endif %}
+    </div>
 </div>
 <hr>
 <div class="row">

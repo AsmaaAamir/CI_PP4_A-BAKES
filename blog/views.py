@@ -7,7 +7,9 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.views.generic.edit import FormView
-from django.utils.text import slugify 
+from django.utils.text import slugify
+from django.contrib.messages.views import SuccessMessageMixin
+
 
 # Internal:
 # --------------------
@@ -112,6 +114,7 @@ class AddPost(ListView):
             form = form.save(commit=False)
             form.slug = slugify(form.title)
             form.save()
+            messages.success(request, 'Thank you for sharing your recipe')
         return redirect(reverse('blog'))
 
     def get(self, request, *args, **kwargs):
