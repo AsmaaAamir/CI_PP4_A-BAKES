@@ -13,9 +13,8 @@ from django.contrib.messages.views import SuccessMessageMixin
 
 # Internal:
 # --------------------
-from .models import Post
+from .models import Post, Comment
 from .forms import AddPostForm, CommentForm
-
 
 # Create your views here.
 
@@ -160,8 +159,10 @@ class PostLike(ListView):
 
 class PostComment(ListView):
     """
-    user cane view comment on post 
+    user can view comment on post
     """
+   
+
 
 class LoginPage(ListView):
     """
