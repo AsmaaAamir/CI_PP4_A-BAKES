@@ -76,7 +76,8 @@
         <img class="recipe-img" src="{{ post.featured_image3.url }}" width="50%" >
         {% endif %}
     </div>
-    <div>
+    <div> 
+        <!-- Alowing user to edit or detele their post -->
         {% if user.is_authenticated %}
             {% if user.id == post.owner.id %}
                 <button> Update

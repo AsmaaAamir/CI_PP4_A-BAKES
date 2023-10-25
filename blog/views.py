@@ -124,6 +124,22 @@ class AddPost(ListView):
         return render(request, 'addpost.html', {"form": form})
 
 
+class EditPost(ListView):
+    """
+    User can edit their current post 
+    """
+    def get(self, request):
+        return render(request, 'editpost.html')
+
+
+class DeletePost(ListView):
+    """
+    User can delete their current post d
+    """
+    def get(self, request):
+        return render(request, 'deletepost.html')
+
+
 class PostLike(ListView):
     """
     user can view number of likes on a posts

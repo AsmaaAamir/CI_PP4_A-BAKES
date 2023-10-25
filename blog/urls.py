@@ -18,4 +18,6 @@ urlpatterns = [
     path('gallary', views.GallaryPage.as_view(), name='gallary'),
     path('contact', views.ContactPage.as_view(), name='contact'),
     path('addpost/recipe_id', views.AddPost.as_view(), name='addpost'),
+    path('editpost/recipe_id', views.EditPost.as_view(), name='editpost'),
+    path('deletepost/recipe_id', views.DeletePost.as_view(), name='deletepost'),
 ]
