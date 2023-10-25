@@ -158,6 +158,11 @@ class PostLike(ListView):
         return HttpResponseRedirect(reverse('recipe', args=[slug]))
 
 
+class PostComment(ListView):
+    """
+    user cane view comment on post 
+    """
+
 class LoginPage(ListView):
     """
     Login page can be viewed

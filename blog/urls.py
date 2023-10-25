@@ -12,6 +12,7 @@ urlpatterns = [
     path('blog/', views.PostList.as_view(), name='blog'),
     path('<slug:slug>/', views.PostDetail.as_view(), name='recipe'),
     path('like/<slug:slug>', views.PostLike.as_view(), name='post_like'),
+    path('comments/<slug:slug>', views.post.as_view(), name='post_comment'),
     path('login', views.LoginPage.as_view(), name='login'),
     path('logout', views.LogoutPage.as_view(), name='logout'),
     path('signup', views.SignupPage.as_view(), name='signup'),
