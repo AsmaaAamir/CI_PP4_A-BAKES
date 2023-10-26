@@ -76,17 +76,15 @@
         <img class="recipe-img" src="{{ post.featured_image3.url }}" width="50%" >
         {% endif %}
     </div>
-    <div> 
+    <div class="edit-recipe"> 
         <!-- Alowing user to edit or detele their post -->
         {% if user.is_authenticated %}
-            {% if user.id == post.owner.id %}
-                <button> Update
-                    <a herf="{% url 'editpost' post.pk %}"></a>  
-                </button>
-                <button> Delete
-                    <a herf="{% url 'deletpost' post.pk %}"></a>  
-                </button>
-            {% endif %}
+        <button class="edit-button">
+            <a href="{% url 'editpost' %}"> Edit recipe </a>
+        </button>
+        <button class="edit-button">
+            <a href="{% url 'deletepost' %}"> Deleted recipe</a>
+        </button>
         {% endif %}
     </div>
 </div>
