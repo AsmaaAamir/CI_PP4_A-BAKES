@@ -127,8 +127,17 @@ class EditPost(ListView):
     """
     User can edit their current post 
     """
+    model = Post
+    form_class = AddPostForm
+    template_name = "editpost.html"
+    
     def get(self, request):
-        return render(request, 'editpost.html')
+        return render(request)
+    
+    
+    #def get_queryset(self):
+     #   author = self.request.user
+      #  return self.model.objects.filter(author=author)
 
 
 class DeletePost(ListView):

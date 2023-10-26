@@ -423,7 +423,6 @@ h3 {
 }
 .logint-form-box{
   padding:25px 50px;
-  
 }
 .login-form-box hr{
   color: black;
@@ -458,7 +457,7 @@ h3 {
   padding: 8px 16px;
   margin-bottom: 22px;
 }
-.login+form input:hover{
+.login_form input:hover{
   background-color: rgba(0, 0, 0, 0.1);
 }
 .login_form button{
@@ -472,7 +471,7 @@ h3 {
 .login_form button:hover{
   background-color:rgb(235, 116, 215)
 }
-/* ------------------ Log out Page -------------------- */
+/* ------------------ Logout Page -------------------- */
 .logout-container{
   max-width: 500px;
   margin: auto;
@@ -484,6 +483,21 @@ h3 {
   border-radius: 15px;
 }
 .logout-container h1 {
+  font-family: 'Dancing Script', sans-serif;
+  color:#aa3e98ff;
+}
+/* ------------------ Delete Post Page ---------------- */
+.delete-container{
+  max-width: 500px;
+  margin: auto;
+  padding: 40px;
+  position: relative;
+  top: 100px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+}
+.delete-container h2{
   font-family: 'Dancing Script', sans-serif;
   color:#aa3e98ff;
 }
