@@ -127,26 +127,32 @@ Relational databases was used to complete the coding for this application. Durin
 ---
 
 # 2. Features
-- Logo
-- Navigation Bar
+- Logo & Navigation Bar
+    The logo and navigation bar are always present at the top of the screen and can be accessed from any page. so that the user does not need to scroll up in order to view the logo and navigation bar at the top of the page. 
+
 - Footer
-- Home Page
+    The social media account can be accessed through the footer, which is located at the bottom of the website. Upon selecting the preferred social media platform, a new page will open with the user's customizable application. 
+
+- Home Page 
+    The welcome text and background on the home page provide a brief introduction to the site administrator and her passion for baking.  
+
 - Blog Page
+    The blog page has all the list of uploaded recipe that are approved for the admin is available.  Every post is displayed on a card that includes a header, an image, a recipe, the amount of likes and comments, the time and date it was uploaded, and more.  
+
 - Recipe Page
-    - main Image 
-    - Heading
-    - Like 
-    - Comments 
-    - Ingredient 
-    - Image
-    - Instruction
-    - Image
-    - Edit and Delet option 
-    - Comment Section 
+   The recipe page lets users look at the recipe. It greets them with the recipe's image and title at the top, followed by the amount of likes and comments. The user is then prompted to the ingredient section, with another image appearing immediately below. Then comes a instructions on how to bake or prepare the dish, along with an another Image  and then edit, remove button. It is only visible to authenticated users. The comment box, where users can share their thoughts on the recipe, is located directly beneath it.
+   
 - Gallary page
+    The Gallary Page has a few desserts that have been created, some that have been uploaded, and others that will be uploaded soon are all shown in the gallery page. 
+
 - Contact Us page 
+    If a site visitor wants to get in touch with the admin, they can do so via the Email JS form on the contact page.
 - Log in Page 
-- Log out Page 
+    Using the Django allauthentication user can use the Login page to enter username and password to log in 
+- Log out Page
+    The sign-out page asks the user if they are sure they want to log out, and if they are, they just click the sign-out button.
+- Registation Page
+    The user can access the registration form by clicking the "sign up" option on the login page if they do not have any login details. 
 
 --- 
 # 3. Testing 
