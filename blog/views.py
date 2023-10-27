@@ -122,13 +122,27 @@ class AddPost(ListView):
 
         return render(request, 'addpost.html', {"form": form})
 
-
+@login_required
 class EditPost(ListView):
     """
     User can edit their current post
     """
-    def get(self, request):
-        return render(request, 'editpost.html')
+    def get(self, request, recipe_id):
+        recipe = Post.objects.get(pk=recipe_id)
+        
+        if request.method == 'POST':
+            form = AddPostForm(request.POST, instance=recipe)
+            
+            if form.is_valid():
+                form.save()
+            else: 
+                messages.error(
+                    request, 'Sorry we couldnot update the recipe')
+        else:
+            form = AddPostForm(instance=recipe)
+        return render(
+            request, 'recipe.html', {'form': 'Edit recipe'})
+
 
 class DeletePost(ListView):
     """
