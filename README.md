@@ -166,6 +166,7 @@ Relational databases was used to complete the coding for this application. Durin
 ### Heroku App
 ### Attaching the Database 
 ### Cloudinary 
+
 ### Local Deployment
 ### Manual Deployment 
 

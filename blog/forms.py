@@ -16,19 +16,18 @@ class AddPostForm(forms.ModelForm):
     title = forms.CharField(required=True)
     excerpt = forms.CharField(required=True)
     featured_image = forms.ImageField
-    ingredient = forms.CharField(required=True)
-    featured_image = forms.ImageField(required=False)
-    instruction = forms.CharField(required=True)
+    ingredient_content = forms.CharField(required=True)
+    instruction_content = forms.CharField(required=True)
 
     class Meta:
         """
         defines post form meta include
         """
         model = Post
-        fields = ('title', 'excerpt', 'featured_image', 'ingredient', 'instruction')
+        fields = ('title', 'excerpt', 'featured_image', 'ingredient_content', 'instruction_content')
         widgets = {
-            'ingredient': SummernoteInplaceWidget(),
-            'instruction': SummernoteInplaceWidget()
+            'ingredient_content': SummernoteInplaceWidget(),
+            'instruction_content': SummernoteInplaceWidget()
             }
 
 
