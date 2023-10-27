@@ -10,7 +10,7 @@ This project's goal was to create a full-stack Django application using the comp
     1. [Strategy](#strategy)<br>
     2. [Scope](#scope)<br>
     3. [Structure](#struture)<br>
-    4. [Skeleton/WireFrame](#skeleton)<br>
+    4. [WireFrame](#wireframe)<br>
     5. [Surface](#surface)<br>
 2. [Features](#feature)
 3. [Testing](#testing)<br>
@@ -38,8 +38,8 @@ This project's goal was to create a full-stack Django application using the comp
 - Users who enjoy talking to others about recipes they've tried out from posts.
 - User looking for a kind and supportive community that recently took up baking.
 
-## 1 Strategy <hr>
-
+## 1. Strategy <hr>
+---
 ## User Stories- Agile Methodology 
 
 ### Account & Registration <hr>
@@ -67,10 +67,10 @@ This project's goal was to create a full-stack Django application using the comp
 4.3 As a **Site admin**  I can **manage user  account** so that **create new users, update current user details or deactive user status**<br>
 
 
-## Scope
+## 2.Scope
 ---
 
-## Structure 
+## 3. Structure 
 
 ### Code Structure <hr>
 I have split the code in different Apps, FoldersFiles and Files using the Django framework. 
@@ -104,10 +104,57 @@ I have split the code in different Apps, FoldersFiles and Files using the Django
 
 ### Website Structure 
 
+--- 
+## Database
 
-## Database 
+Relational databases was used to complete the coding for this application. During development, I used SQLite DB in production, Postgres was the primary database, and for deployment, all data was moved to Heroku Postgres.  
 
+### Data Schema 
 
+### Models
+<hr> 
+    * User Model
+    * Like Model
+    * Comment Model  
+
+### 4. WireFrame
+
+### 5. Surface 
+* Font    
+* Color Palette 
+* Images
+
+---
+
+# 2. Features
+- Logo
+- Navigation Bar
+- Footer
+- Home Page
+- Blog Page
+- Recipe Page
+    - main Image 
+    - Heading
+    - Like 
+    - Comments 
+    - Ingredient 
+    - Image
+    - Instruction
+    - Image
+    - Edit and Delet option 
+    - Comment Section 
+- Gallary page
+- Contact Us page 
+- Log in Page 
+- Log out Page 
+
+--- 
+# 3. Testing 
+### user Stroies 
+### Automated testing
+### Validation testing 
+
+# 4. Deploment 
 
 
 # 5. Tecnologies Used

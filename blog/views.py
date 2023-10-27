@@ -127,10 +127,8 @@ class EditPost(ListView):
     """
     User can edit their current post
     """
-    #def get_queryset(self):
-     #   author = self.request.user
-      #  return self.model.objects.filter(author=author)
-
+    def get(self, request):
+        return render(request, 'editpost.html')
 
 class DeletePost(ListView):
     """
