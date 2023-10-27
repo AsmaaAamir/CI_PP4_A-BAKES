@@ -67,3 +67,9 @@ class Comment(models.Model):
         Return a string that shows the comment and its author
         """
         return f"Comment {self.body} by {self.name}"
+    
+    def number_of_comments(self):
+        """
+        Shows the number if comments on the recipes
+        """
+        return self.comments.count()

@@ -1,17 +1,17 @@
 # A'Bakes
 <img src=#>
-[Live Page: ]
-## Project Overview
+[Live Page: ] <br>
+# Project Overview <hr>
 A'kitchen is a web application that allows the target audience to browse & create recipes and engage in conversations with other users who are also authenticated on the website. A'Kitchen allows users to like and comment on recipes. 
 This project's goal was to create a full-stack Django application using the computer languages Python, HTML, CSS, JavaScript, and Bootstrap. It makes use of CRUD capability so that authorised users may add expedition reviews to the website and create, browse, amend, and delete them. User registration and sign-in are implemented using the allauth Django package.
 
 # Table of Contents
 1. [User Experience (UX)](#user-experience)<br>
-    i. [Strategy](#strategy)<br>
-    ii. [Scope](#scope)<br>
-    iii. [Structure](#struture)<br>
-    iv. [Skeleton/WireFrame](#skeleton)<br>
-    v. [Surface](#surface)<br>
+    1. [Strategy](#strategy)<br>
+    2. [Scope](#scope)<br>
+    3. [Structure](#struture)<br>
+    4. [Skeleton/WireFrame](#skeleton)<br>
+    5. [Surface](#surface)<br>
 2. [Features](#feature)
 3. [Testing](#testing)<br>
     - [User Stories](#user-stories)
@@ -38,32 +38,74 @@ This project's goal was to create a full-stack Django application using the comp
 - Users who enjoy talking to others about recipes they've tried out from posts.
 - User looking for a kind and supportive community that recently took up baking.
 
-## i. Strategy 
+## 1 Strategy <hr>
 
 ## User Stories- Agile Methodology 
-| **User Story** | **As a:** | **I can:** | **So that:** |
-| ------ | ----- | ------ | ------ |
-| **Account & Registration** | | | |
-| 1 | Site user | Register for a account  | I can have the ability to comment on post, like posts and share my recipe. |
-| 2 | Site user | Login with my username and password  | I can utilise all of the website's features. |
-| 3 | Site user | Log-out of my account | other users cannot access my account |
-| 4 | Site user | Recover my password if i have forgotten | I can recover my account and access the site features |
-| **Navigation** | | | |
-| 1 | Site user | I can access Nav Bar from any page |  I can choose go anywhere on the site |
-| **Post** | | | |
-| 1 | Site user/ Guest user | View a list of post/ recipes | I am able to choose which recipes/post I would like to view| 
-| 2 | Site user/ Guest user | View a paginated list of posts | It doesn't get overpopulated with post |
-| 3 | Site user/ Guest user | Click on a post | I can read the full recipe and see If would like to create it | 
-| 4 | Logged-In user | post my recipes | I can share my recipe on teh site for other user to view |
-| 5 | Logged-In user | edit my post/ recipe | I can make any change if I made a error or update a recipe |  
-| 6 | Logged-In user | delete my post/ recipe | I can remove the reciped If i dont wish to shre it anymore | 
-| 7 | Logged-In user | Like a post/ recipe | I can show my love to recipe |
-| 8 | Logged-In user | leave a comment on a post/ recipe| I can be involoved in the converation and express my opnion on the recipe |
-| **Site Admin** | | | |
-| 1 | Site admin | create, edit and delete post on the Django admin | I can manage the site for the best User Experiene | 
-| 2 | Site admin | approve and delete comments the Django admin | I can filter out the comment for best  User Experience |
-| 3 | Site admin | manage user  account  | I can create new users, update current user details or deactive user status |
 
+### Account & Registration <hr>
+1.1 As a **Site user** I can **Register for a account** so that **I can have the ability to comment on post, like posts and share my recipe**<br>
+1.2 As a **Site user** I can **Login with my username and password** so that **I can utilise all of the website's features.** <br>
+1.3 As a **Site user** I can **Log-out of my account** so that **other users cannot access my account.** <br>
+1.4 As a **Site user**  I can **Recover my password if i have forgotten** so that **I can recover my account and access the site features.**<br>
+
+### Navigation <hr>
+2. As a **Site user**  I can **I can access Nav Bar from any page** so that **I can choose go anywhere on the site**<br>
+
+### Post <hr> 
+3.1 As a **Site user/ Guest user**  I can **View a list of post/ recipes** so that **I am able to choose which recipes/post I would like to view**<br>
+3.2 As a **Site user/ Guest user**  I can **View a paginated list of posts** so that **It doesn't get overpopulated with post**<br>
+3.3 As a **Site user/ Guest user**  I can **Click on a post** so that **I can read the full recipe and see If would like to create it**<br>
+3.4 As a **Logged-In user**  I can **post my recipes** so that **I can share my recipe on teh site for other user to view**<br>
+3.5 As a **Logged-In user**  I can **edit my post/ recipe** so that **I can make any change if I made a error or update a recipe**<br>
+3.6 As a **Logged-In user**  I can **delete my post/ recipe** so that **I can remove the reciped If i dont wish to shre it anymore**<br>
+3.7 As a **Logged-In user**  I can **Like a post/ recipe** so that **I can show my love to recipe**<br>
+3.8 As a **Logged-In user**  I can **leave a comment on a post/ recipe** so that **I can be involoved in the converation and express my opnion on the recipe**<br>
+
+### Site Admin <hr>
+4.1 As a **Site admin**  I can **create, edit and delete post on the Django admin** so that **I can manage the site for the best User Experiene**<br>
+4.2 As a **Site admin**  I can **approve and delete comments the Django admin** so that **I can filter out the comment for best  User Experience**<br>
+4.3 As a **Site admin**  I can **manage user  account** so that **create new users, update current user details or deactive user status**<br>
+
+
+## Scope
+---
+
+## Structure 
+
+### Code Structure <hr>
+I have split the code in different Apps, FoldersFiles and Files using the Django framework. 
+
+- ### Abakes -app- 
+    This folder contains the main project files:-
+    * Setting.py - Setting 
+    * Urls.py - Website urls 
+
+- ### Blog -app- 
+    This folder conatins all the functuionallty file for the app:-
+    * Admin.py - The models are seen in the Django admin panel due to this file. It's also used in admin panel customization.
+    * Forms.py - The fields on the form that are utilised in the app are customized in this file. 
+    * Models.py - This file contain all the attribute details and models. 
+    * Test.py - Automated testing for forms, models, and views is contained in this file. 
+    * urls.py - This file containe all the Website urls
+    * views.py - This file contains Python functions and classes that return a web page response after receiving a request.  
+
+- ### Folder 
+    * Static - This folder contain CSS and JaveScript files
+    * Templates - This folder contains all the HTML templates and AllAuth(Django authentication)
+
+- ### Files 
+    * Db.sqlite3 - This file contain the Database for development
+    * Manage.py - This is the main Python file for starting the website
+    * Procfile - This file allows to run the App
+    * Readme.md - This file contain read me documention
+    * Requriement.txt - This file contains all the Python libraries that have been installed for this app. 
+
+<hr>
+
+### Website Structure 
+
+
+## Database 
 
 
 
