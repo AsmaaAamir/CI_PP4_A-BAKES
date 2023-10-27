@@ -1,9 +1,13 @@
 # A'Bakes
 <img src=#>
 [Live Page: ] <br>
-# Project Overview <hr>
+
+# Project Overview
+
 A'kitchen is a web application that allows the target audience to browse & create recipes and engage in conversations with other users who are also authenticated on the website. A'Kitchen allows users to like and comment on recipes. 
 This project's goal was to create a full-stack Django application using the computer languages Python, HTML, CSS, JavaScript, and Bootstrap. It makes use of CRUD capability so that authorised users may add expedition reviews to the website and create, browse, amend, and delete them. User registration and sign-in are implemented using the allauth Django package.
+
+<br>
 
 # Table of Contents
 1. [User Experience (UX)](#user-experience)<br>
@@ -38,34 +42,30 @@ This project's goal was to create a full-stack Django application using the comp
 - Users who enjoy talking to others about recipes they've tried out from posts.
 - User looking for a kind and supportive community that recently took up baking.
 
-## 1. Strategy <hr>
----
+## 1. Strategy 
 ## User Stories- Agile Methodology 
-
 ### Account & Registration <hr>
-1.1 As a **Site user** I can **Register for a account** so that **I can have the ability to comment on post, like posts and share my recipe**<br>
-1.2 As a **Site user** I can **Login with my username and password** so that **I can utilise all of the website's features.** <br>
-1.3 As a **Site user** I can **Log-out of my account** so that **other users cannot access my account.** <br>
-1.4 As a **Site user**  I can **Recover my password if i have forgotten** so that **I can recover my account and access the site features.**<br>
+1.1 **As a** Site user **I can** Register for a account **so that** I can have the      ability to comment on post, like posts and share my recipe<br>
+1.2 **As a** Site user **I can** Login with my username and password **so that** I can utilise all of the website's features.<br>
+1.3 **As a** Site user **I can** Log-out of my account **so that** other users cannot access my account. <br>
+1.4 **As a** Site user **I can** Recover my password if i have forgotten **so that** I can recover my account and access the site features.<br>
 
 ### Navigation <hr>
-2. As a **Site user**  I can **I can access Nav Bar from any page** so that **I can choose go anywhere on the site**<br>
+2. **As a** Site user **I can** access Nav Bar from any page **so that** I can choose go anywhere on the site<br>
 
 ### Post <hr> 
-3.1 As a **Site user/ Guest user**  I can **View a list of post/ recipes** so that **I am able to choose which recipes/post I would like to view**<br>
-3.2 As a **Site user/ Guest user**  I can **View a paginated list of posts** so that **It doesn't get overpopulated with post**<br>
-3.3 As a **Site user/ Guest user**  I can **Click on a post** so that **I can read the full recipe and see If would like to create it**<br>
-3.4 As a **Logged-In user**  I can **post my recipes** so that **I can share my recipe on teh site for other user to view**<br>
-3.5 As a **Logged-In user**  I can **edit my post/ recipe** so that **I can make any change if I made a error or update a recipe**<br>
-3.6 As a **Logged-In user**  I can **delete my post/ recipe** so that **I can remove the reciped If i dont wish to shre it anymore**<br>
-3.7 As a **Logged-In user**  I can **Like a post/ recipe** so that **I can show my love to recipe**<br>
-3.8 As a **Logged-In user**  I can **leave a comment on a post/ recipe** so that **I can be involoved in the converation and express my opnion on the recipe**<br>
+3.1 **As a** Site user/ Guest user **I can** View a list of post/ recipes **so that** I am able to choose which recipes/post I would like to view<br>
+3.2 **As a** Site user/ Guest user **I can** View a paginated list of posts **so that** It doesn't get overpopulated with post<br>
+3.3 **As a** Site user/ Guest user **I can** Click on a post **so that** I can read the full recipe and see If would like to create it<br>
+3.4 **As a** Logged-In user **I can** post my recipes **so that** I can share my recipe on the site for other user to view<br>
+3.5 **As a** Logged-In user **I can**Like a post/ recipe **so that** I can show my love to recipe<br>
+3.6 **As a** Logged-In user **I can** leave a comment on a post/ recipe **so that** I can be involoved in the converation and express my opnion on the recipe<br>
 
 ### Site Admin <hr>
-4.1 As a **Site admin**  I can **create, edit and delete post on the Django admin** so that **I can manage the site for the best User Experiene**<br>
-4.2 As a **Site admin**  I can **approve and delete comments the Django admin** so that **I can filter out the comment for best  User Experience**<br>
-4.3 As a **Site admin**  I can **manage user  account** so that **create new users, update current user details or deactive user status**<br>
-
+4.1 **As a** Site admin **I can** create, edit and delete post on the Django admin **so that** I can manage the site for the best User Experiene<br>
+4.2 **As a** Site admin **I can** approve and delete comments the Django admin **so that**I can filter out the comment for best  User Experience<br>
+4.3 **As a** site admin **I can** edit and delete recipe/post **so that** if there any repeat and if there are any error that can be solved. 
+4.4 **As a** Site admin **I can** manage user  account **so that** create new users, update current user details or deactive user status**<br>
 
 ## 2.Scope
 ---
@@ -140,7 +140,7 @@ Relational databases was used to complete the coding for this application. Durin
     The blog page has all the list of uploaded recipe that are approved for the admin is available.  Every post is displayed on a card that includes a header, an image, a recipe, the amount of likes and comments, the time and date it was uploaded, and more.  
 
 - Recipe Page
-   The recipe page lets users look at the recipe. It greets them with the recipe's image and title at the top, followed by the amount of likes and comments. The user is then prompted to the ingredient section, with another image appearing immediately below. Then comes a instructions on how to bake or prepare the dish, along with an another Image  and then edit, remove button. It is only visible to authenticated users. The comment box, where users can share their thoughts on the recipe, is located directly beneath it.
+   The recipe page lets users look at the recipe. It greets them with the recipe's image and title at the top, followed by the amount of likes and comments. The user is then prompted to the ingredient section, with another image appearing immediately below. Then comes a instructions on how to bake or prepare the dish, along with an another Image. Then the comment box, where users can share their thoughts on the recipe, is located directly beneath it.
    
 - Gallary page
     The Gallary Page has a few desserts that have been created, some that have been uploaded, and others that will be uploaded soon are all shown in the gallery page. 
@@ -162,9 +162,79 @@ Relational databases was used to complete the coding for this application. Durin
 
 # 4. Deploment 
 ### Installing Django and Libraries
-### Enviroment and Setting Files
+Before I start developing the project, I need to install Django and its dependencies on GitPod in order for it to function.
+Once you've launched GitPod, proceed as follows in the Terminal:-
+1. pip3 install 'django<4’ gunicorn : This will install Django & Gunicorn 
+2. pip3 install dj_database_url==0.5.0 psycopg2 : This will install database
+3. pip3 install dj3-cloudinary-storage : This will install Cloudinary library 
+4. In order to avoid having to reinstall them, you must now add them to the required file. you can do that by : pip3 freeze --local > requirement.txt. This will create a new file and save that data. 
+5. Now you can create the project by : django-admin startproject abakes.
+6. Now you need to create the app : python3 manage.py startapp blog. 
+7. python3 manage.py migrate : this will migrate the project and app. 
+8. To test if everything is working run: python3 manage.py runserver. 
+
 ### Heroku App
+For the project your need Heroku and you make a account on [Heroku](https://www.heroku.com/platform). 
+
+1. To create a new app you would need to 
+    - Go on Heroku dasboard
+    - Click 'New' 
+    - Then 'Create New App'
+2. Enter a name for you Heroku app and select the region
+3. To add the database to the Heroku app: 
+    - Go to the Resources tab and in the add-ons sections, search for 'Heroku Postgres' and click it. 
+    - Then click 'Hobby Dev - Free' from the plan name drop-dwon menu. 
+    - Then Submit Order Form. 
+4. To get the database URL, you would need to go to setting tab and then click 'Reveal Config Vars'. Copy the database URL. 
+
+
+
 ### Attaching the Database 
+1. Make "env.py" a new file inside the Django application.
+2. The os library needs to be imported into the "env.py" file. in order for you to save information. Add : "import os" 
+3. Set the Environmet variable : Add "os.environ["DATABASE_URL"] = (Paste the database key from Heroku)
+4. Then add the secret key : Add "os.environ["DATABASE_URL"] = (As hsi is your project you can create your own key) 
+for example: 
+    ----------------------------------------------------
+    |os.environ["DATABASE_URL"] = (your database key )|
+    |os.environ["SECRET_KEY"] = (your secretkey )|
+    ----------------------------------------------------
+
+
+### Enviroment and Setting Files
+1. For getting our file setup and evenironemtn ready for the project  Add the following snippet at the top of the settings.py file:
+
+    from pathlib import Path
+    import os
+    import dj_database_url
+    if os.path.isfile('env.py'):
+        import env
+
+2. Jsut belwo that look for : SECURITY WARNING: keep the secret key used in production secret! and then enter following snippet:
+
+    SECRET_KEY = os.environ.get('SECRET_KEY')
+
+3. We would need to comment out the previous Database section  in order for the project to link to our database.To accomplish that, use # before the text:
+     
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+4. Once that been comment out  add the updated database details: 
+    
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    }
+
+5. After it is finished, we need make migrations : python3 manage.py makemigrations. 
+6. If everything is okay then migrate : python3 manage.py migrate.
+
+
+
+
+
 ### Cloudinary 
 
 ### Local Deployment

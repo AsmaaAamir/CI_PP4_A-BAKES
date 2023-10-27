@@ -3,7 +3,6 @@
 # ----------------------------------------------------------
 from django import forms
 from django_summernote.widgets import SummernoteInplaceWidget
-
 # Internal:
 # ------------------------------------
 from .models import Post, Comment
