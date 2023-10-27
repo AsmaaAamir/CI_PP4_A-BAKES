@@ -174,7 +174,7 @@ Once you've launched GitPod, proceed as follows in the Terminal:-
 8. To test if everything is working run: python3 manage.py runserver. 
 
 ### Heroku App
-For the project your need Heroku and you make a account on [Heroku](https://www.heroku.com/platform). 
+For the project your need Heroku and you need to make an account on [Heroku](https://www.heroku.com/platform). 
 
 1. To create a new app you would need to 
     - Go on Heroku dasboard
@@ -187,8 +187,6 @@ For the project your need Heroku and you make a account on [Heroku](https://www.
     - Then Submit Order Form. 
 4. To get the database URL, you would need to go to setting tab and then click 'Reveal Config Vars'. Copy the database URL. 
 
-
-
 ### Attaching the Database 
 1. Make "env.py" a new file inside the Django application.
 2. The os library needs to be imported into the "env.py" file. in order for you to save information. Add : "import os" 
@@ -200,17 +198,17 @@ for example:
     |os.environ["SECRET_KEY"] = (your secretkey )|
     ----------------------------------------------------
 
-
 ### Enviroment and Setting Files
 1. For getting our file setup and evenironemtn ready for the project  Add the following snippet at the top of the settings.py file:
+    --------------------------
+    | from pathlib import Path |
+    | import os |
+    | import dj_database_url |
+    | if os.path.isfile('env.py'): |
+    |    import env |
+    --------------------------------
 
-    from pathlib import Path
-    import os
-    import dj_database_url
-    if os.path.isfile('env.py'):
-        import env
-
-2. Jsut belwo that look for : SECURITY WARNING: keep the secret key used in production secret! and then enter following snippet:
+2. Just below that look for : SECURITY WARNING: keep the secret key used in production secret! and then enter following snippet:
 
     SECRET_KEY = os.environ.get('SECRET_KEY')
 
@@ -231,11 +229,58 @@ for example:
 5. After it is finished, we need make migrations : python3 manage.py makemigrations. 
 6. If everything is okay then migrate : python3 manage.py migrate.
 
-
-
-
-
 ### Cloudinary 
+For the project your need cloudinary and you make a account on [Cloudinary](https://cloudinary.com/). 
+1. From Cloudinary dashbaord you can copy the CLOUDINARY_URL and then paste in to env.py file. 
+    for example:
+    ---------------
+    | os.environ["CLOUDINARY_URL"] = (your copied key from cloudinary dashbaord) |
+    ---------------
+2. Add the same copied cloudinary key to Heroku config var, your would just need to enter CLOUDINARY_URL in the config section and as the key would be the same key you enter in env.py file. 
+3. Now we need to add the cloudinary key in the setting.py file.
+    - Firstly add the cloudinary libararies under the installed apps you have to make sure you enter the order correctly like below:
+
+        1. 'cloudinary_storage',
+        2. 'django.contrib.staticfiles',
+        3. 'cloudinary',
+
+4. Enter the following code to let Django use Cloudinary to store media and static files:
+
+    STATIC_URL = '/static/'
+    STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
+    MEDIA_URL = '/media/'
+    DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+5. Enter the following code to link the Templates directory:
+
+    TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+
+7. Change the directory for templates to TEMPLATES_DIR (from TEMPLATES array): 
+
+    TEMPLATES = [
+        {
+            'BACKEND': 'django.template.backends.django.DjangoTemplates',
+            'DIRS': [TEMPLATES_DIR],
+            'APP_DIRS': True,
+            'OPTIONS': {
+                'context_processors': [
+                    'django.template.context_processors.debug',
+                    'django.template.context_processors.request',
+                    'django.contrib.auth.context_processors.auth',
+                    'django.contrib.messages.context_processors.messages',
+                ],
+            },
+        },
+    ]   
+
+8. For the Website to run we need to add Heroku Hostname to Allowed_Hosts array: 
+
+    ALLOWED_HOSTS = ["ci-pp4-a-abakes.herokuapp.com", "localhost"]. 
+
 
 ### Local Deployment
 ### Manual Deployment 
