@@ -161,30 +161,44 @@ Relational databases was used to complete the coding for this application. Durin
 ### Validation testing 
 
 # 4. Deploment 
+### Installing Django and Libraries
+### Enviroment and Setting Files
+### Heroku App
+### Attaching the Database 
+### Cloudinary 
+### Local Deployment
+### Manual Deployment 
+
 
 
 # 5. Tecnologies Used
 ## Languages 
-- Django 
-- HTML
-- CSS 
+- HTML : The foundational language utilised to create the project's templates is HTML.
+- CSS : To add my personal styling to the project, custom CSS was written. Additionally, media queries were added to provide responsiveness across various viewport sizes.
+- Javascript
+- Python 
+- Django
 
-## Applications, Platforms
-- Bootstrap:
-- Git Pod:
-- GitHub:
-- Postgres:
-- Balsamiq Wireframe: This was used to create the wireframes for this rpoject diplaying in the Skeleton Plane. 
-- Am I Responsive: 
-- Google Font:
-- 
+## Applications, Platforms, Resources 
+- Bootstrap: The project's overall content structure, footer, and navbar were all implemented using the Bootstrap framework.
+- GitPod: IDE used for the development.
+- GitHub: Used to create a repository where the project's files are stored. 
+- Balsamiq Wireframe: The wireframes for this project were made using this, and they were displayed in the Skeleton Plane. 
+- Am I Responsive: Used to make user the website was responsive. 
+- Google Font : To make it more unique, Google Font was utilised to create the text. 
+- Heroku : Utilised this cloud-based platform to deploy the website and make it public.
+- Heroku PostgreSQL : Utilised as the project's database of choice while it was being developed.   
+- Cloudinary : Used to store project media images and static files. 
+- Django AllAuth: Utilised to carry out user authentication on websites
+- Font Awesome : Used to get soicla medial icons. 
+
 
 ### Future Improvements
 I would like to implement a number of functionality upgrades in the future. I was unable to complete my project because of a personal situation. But here is what I would have added:
-1. A few of the user tales are unfinished.
-2. The capability of recovering a user's password in the event that it has been lost, stolen, or corrupted.
-3. Providing the option for users to share their recipes so that others can try them.
-4. Give the user the option to rate the recipe once they tried.
-5. Allow users to save a recipe to their favourites so that they may return to it without having to hunt for it after logging in.
-6. The opportunity to let users vote on the upcoming recipe.
-7. Complete the read-me file.
+1. The capability of recovering a user's password in the event that it has been lost, stolen, or corrupted.
+2. Give the user the option to rate the recipe once they tried.
+3. The opportunity to let users vote on the upcoming recipe.
+
+## Credits
+
+## Acknowledgements
