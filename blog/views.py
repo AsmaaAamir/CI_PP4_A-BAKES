@@ -35,7 +35,7 @@ class PostList(ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by("-created_on")
     template_name = "blog.html"
-    paginate_by = 6
+    paginate_by = 4
 
 
 class PostDetail(ListView):
@@ -100,7 +100,7 @@ class PostDetail(ListView):
 
 class AddPost(ListView):
     """
-    user can add recipe 
+    user can add recipe
     """
     model = Post
     form_class = AddPostForm
@@ -125,16 +125,8 @@ class AddPost(ListView):
 
 class EditPost(ListView):
     """
-    User can edit their current post 
+    User can edit their current post
     """
-    model = Post
-    form_class = AddPostForm
-    template_name = "editpost.html"
-    
-    def get(self, request):
-        return render(request)
-    
-    
     #def get_queryset(self):
      #   author = self.request.user
       #  return self.model.objects.filter(author=author)
@@ -170,7 +162,6 @@ class PostComment(ListView):
     """
     user can view comment on post
     """
-   
 
 
 class LoginPage(ListView):
