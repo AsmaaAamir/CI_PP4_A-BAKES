@@ -188,25 +188,24 @@ For the project your need Heroku and you need to make an account on [Heroku](htt
 4. To get the database URL, you would need to go to setting tab and then click 'Reveal Config Vars'. Copy the database URL. 
 
 ### Attaching the Database 
+
 1. Make "env.py" a new file inside the Django application.
-2. The os library needs to be imported into the "env.py" file. in order for you to save information. Add : "import os" 
-3. Set the Environmet variable : Add "os.environ["DATABASE_URL"] = (Paste the database key from Heroku)
-4. Then add the secret key : Add "os.environ["DATABASE_URL"] = (As hsi is your project you can create your own key) 
-for example: 
-    ----------------------------------------------------
-    |os.environ["DATABASE_URL"] = (your database key )|
-    |os.environ["SECRET_KEY"] = (your secretkey )|
-    ----------------------------------------------------
+2. The os library needs to be imported into the "env.py" file. in order for you to save information. Add : "import os".
+3. Set the Environmet variable : Add "os.environ["DATABASE_URL"] = (Paste the database key from Heroku).
+4. Then add the secret key : Add "os.environ["DATABASE_URL"] = (As hsi is your project you can create your own key) for example: 
+
+os.environ["DATABASE_URL"] = (your database key )
+os.environ["SECRET_KEY"] = (your secretkey )
 
 ### Enviroment and Setting Files
+
 1. For getting our file setup and evenironemtn ready for the project  Add the following snippet at the top of the settings.py file:
-    --------------------------
-    | from pathlib import Path |
-    | import os |
-    | import dj_database_url |
-    | if os.path.isfile('env.py'): |
-    |    import env |
-    --------------------------------
+
+from pathlib import Path 
+import os 
+import dj_database_url 
+if os.path.isfile('env.py'): 
+    import env 
 
 2. Just below that look for : SECURITY WARNING: keep the secret key used in production secret! and then enter following snippet:
 
@@ -230,12 +229,14 @@ for example:
 6. If everything is okay then migrate : python3 manage.py migrate.
 
 ### Cloudinary 
+
 For the project your need cloudinary and you make a account on [Cloudinary](https://cloudinary.com/). 
+
 1. From Cloudinary dashbaord you can copy the CLOUDINARY_URL and then paste in to env.py file. 
+
     for example:
-    ---------------
-    | os.environ["CLOUDINARY_URL"] = (your copied key from cloudinary dashbaord) |
-    ---------------
+        os.environ["CLOUDINARY_URL"] = (your copied key from cloudinary dashbaord) 
+   
 2. Add the same copied cloudinary key to Heroku config var, your would just need to enter CLOUDINARY_URL in the config section and as the key would be the same key you enter in env.py file. 
 3. Now we need to add the cloudinary key in the setting.py file.
     - Firstly add the cloudinary libararies under the installed apps you have to make sure you enter the order correctly like below:
@@ -280,6 +281,20 @@ For the project your need cloudinary and you make a account on [Cloudinary](http
 8. For the Website to run we need to add Heroku Hostname to Allowed_Hosts array: 
 
     ALLOWED_HOSTS = ["ci-pp4-a-abakes.herokuapp.com", "localhost"]. 
+
+### Media and Static File
+1. Create 3 files:
+    - Media : will contain all the Images 
+    - Static : Will contain CSS and javascript 
+    - Templates : Will contain all the HTML templates 
+2. Create a Profile
+    - Add the below code in the profile:
+        - web: gunicorn abakes.wsgi 
+3. Then in the terminal Add, Commit and Push:
+    1. git add .
+    2. git commit -m "(wrtie a comment)"
+    3. git push
+
 
 
 ### Local Deployment
