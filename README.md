@@ -14,7 +14,7 @@ This project's goal was to create a full-stack Django application using the comp
     1. [Strategy](#strategy)<br>
     2. [Scope](#scope)<br>
     3. [Structure](#struture)<br>
-    4. [WireFrame](#wireframe)<br>
+    4. [Skeleton](#skeleton)<br>
     5. [Surface](#surface)<br>
 2. [Features](#feature)
 3. [Testing](#testing)<br>
@@ -43,17 +43,19 @@ This project's goal was to create a full-stack Django application using the comp
 - User looking for a kind and supportive community that recently took up baking.
 
 ## 1. Strategy 
-## User Stories- Agile Methodology 
-### Account & Registration <hr>
+
+### User Stories- Agile Methodology 
+
+### Account & Registration
 1.1 **As a** Site user **I can** Register for a account **so that** I can have the      ability to comment on post, like posts and share my recipe<br>
 1.2 **As a** Site user **I can** Login with my username and password **so that** I can utilise all of the website's features.<br>
 1.3 **As a** Site user **I can** Log-out of my account **so that** other users cannot access my account. <br>
 1.4 **As a** Site user **I can** Recover my password if i have forgotten **so that** I can recover my account and access the site features.<br>
 
-### Navigation <hr>
+### Navigation
 2. **As a** Site user **I can** access Nav Bar from any page **so that** I can choose go anywhere on the site<br>
 
-### Post <hr> 
+### Post 
 3.1 **As a** Site user/ Guest user **I can** View a list of post/ recipes **so that** I am able to choose which recipes/post I would like to view<br>
 3.2 **As a** Site user/ Guest user **I can** View a paginated list of posts **so that** It doesn't get overpopulated with post<br>
 3.3 **As a** Site user/ Guest user **I can** Click on a post **so that** I can read the full recipe and see If would like to create it<br>
@@ -117,9 +119,22 @@ Relational databases was used to complete the coding for this application. Durin
     * Like Model
     * Comment Model  
 
-### 4. WireFrame
+## 4. Skeleton
 
-### 5. Surface 
+### WireFrame
+For my project, I created a wireframe using Balsamiq. This helps me arrange the website's payment and gives me an idea of how it will seem on a desktop, tablet, and phone. 
+
+- [Home Page](//media/wireframes/home.png)
+- [Blog Page](//media/wireframes/blog.png)
+- [Recipe Page](//media/screenshot/recipe-page.png)
+- [Add Recipe Page](//media/wireframes/share-recipe.png)
+- [Gallery Page](//media/wireframes/gallery.png)
+- [Contact Us Page](//media/wireframes/contact-us.png)
+- [Log In Page](//media/wireframes/signin.png)
+- [Log Out Page](//media/wireframes/signout.png)
+- [Register Page](//media/wireframes/sign-up.png)
+
+##  5. Surface 
 * Font    
 * Color Palette 
 * Images
@@ -127,34 +142,37 @@ Relational databases was used to complete the coding for this application. Durin
 ---
 
 # 2. Features
-- Logo & Navigation Bar
+- [Logo & Navigation Bar](//media/screenshot/logo-navbar.png)
     The logo and navigation bar are always present at the top of the screen and can be accessed from any page. so that the user does not need to scroll up in order to view the logo and navigation bar at the top of the page. 
 
-- Footer
+- [Footer](//media/screenshot/footer.png)
     The social media account can be accessed through the footer, which is located at the bottom of the website. Upon selecting the preferred social media platform, a new page will open with the user's customizable application. 
 
-- Home Page 
+- [Home Page](//media/screenshot/home-into.png) 
     The welcome text and background on the home page provide a brief introduction to the site administrator and her passion for baking.  
 
-- Blog Page
+- [Blog Page](//media/screenshot/blog-card.png)
     The blog page has all the list of uploaded recipe that are approved for the admin is available.  Every post is displayed on a card that includes a header, an image, a recipe, the amount of likes and comments, the time and date it was uploaded, and more.  
 
-- Recipe Page
+- [Recipe Page](//media/screenshot/recipe-page.png)
    The recipe page lets users look at the recipe. It greets them with the recipe's image and title at the top, followed by the amount of likes and comments. The user is then prompted to the ingredient section, with another image appearing immediately below. Then comes a instructions on how to bake or prepare the dish, along with an another Image. Then the comment box, where users can share their thoughts on the recipe, is located directly beneath it.
    
-- Gallary page
+- [Gallary page](//media/screenshot/gallery-page.png)
     The Gallary Page has a few desserts that have been created, some that have been uploaded, and others that will be uploaded soon are all shown in the gallery page. 
 
-- Contact Us page 
+- [Contact Us page](//media/screenshot/contact-us-page.png) 
     If a site visitor wants to get in touch with the admin, they can do so via the Email JS form on the contact page.
-- Log in Page 
+
+- [Log in Page](//media/screenshot/sign-in-page.png) 
     Using the Django allauthentication user can use the Login page to enter username and password to log in 
-- Log out Page
+
+- [Log out Page](//media/screenshot/sign-out.png)
     The sign-out page asks the user if they are sure they want to log out, and if they are, they just click the sign-out button.
-- Registation Page
+
+- [Registation Page](//media/screenshot/sign-up-page.png)
     The user can access the registration form by clicking the "sign up" option on the login page if they do not have any login details. 
 
---- 
+
 # 3. Testing 
 ### user Stroies 
 ### Automated testing

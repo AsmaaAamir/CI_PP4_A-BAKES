@@ -476,7 +476,7 @@ h3 {
   max-width: 500px;
   margin: auto;
   padding: 40px;
-  position: relative;
+  padding-bottom: 50px;
   top: 100px;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.1);
@@ -486,21 +486,7 @@ h3 {
   font-family: 'Dancing Script', sans-serif;
   color:#aa3e98ff;
 }
-/* ------------------ Delete Post Page ---------------- */
-.delete-container{
-  max-width: 500px;
-  margin: auto;
-  padding: 40px;
-  position: relative;
-  top: 100px;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 15px;
-}
-.delete-container h2{
-  font-family: 'Dancing Script', sans-serif;
-  color:#aa3e98ff;
-}
+
 /* ------------------ Gallary Page -------------------- */
 .gallary-container{
   display: flex;
@@ -632,10 +618,10 @@ h3 {
   background-color:rgb(235, 116, 215)
 }
 /* ------------------ Footer -------------------- */
+
 footer{
   height: 180px;
   clear: both;
-  padding-top: 10px;
 }
 footer h3{
   text-align: center;
