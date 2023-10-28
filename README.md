@@ -77,12 +77,12 @@ This project's goal was to create a full-stack Django application using the comp
 ### Code Structure <hr>
 I have split the code in different Apps, FoldersFiles and Files using the Django framework. 
 
-- #### Abakes -app- 
+- #### Abakes -Main Project- 
     This folder contains the main project files:-
     * Setting.py - Setting 
     * Urls.py - Website urls 
 
-- #### Blog -app- 
+- #### Blog -App contains all the funcionality- 
     This folder conatins all the functuionallty file for the app:-
     * Admin.py - The models are seen in the Django admin panel due to this file. It's also used in admin panel customization.
     * Forms.py - The fields on the form that are utilised in the app are customized in this file. 
@@ -106,16 +106,19 @@ I have split the code in different Apps, FoldersFiles and Files using the Django
 
 ### Website Structure 
 
---- 
-## Database
+### Database
 
-Relational databases was used to complete the coding for this application. During development, I used SQLite DB in production, Postgres was the primary database, and for deployment, all data was moved to Heroku Postgres.  
+A Relational databases was used to complete the coding for this application. During development, I used SQLite DB in production, Postgres was the primary database, and for deployment, all data was moved to Heroku Postgres.  
 
-#### Data Schema 
+### Data Schema 
+To make it simple to illustrate the relationship between datebase, I utilised [DBDiagram](https://dbdiagram.io/home). <br>
+
+![Database Diagram](/media/screenshot/relationship-diagram.png)
+
 
 ### Models
 <hr> 
-    * User Model
+    * User Model 
     * Like Model
     * Comment Model  
 
