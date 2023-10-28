@@ -53,7 +53,8 @@ This project's goal was to create a full-stack Django application using the comp
 1.4 **As a** Site user **I can** Recover my password if i have forgotten **so that** I can recover my account and access the site features.<br>
 
 ### Navigation
-2. **As a** Site user **I can** access Nav Bar from any page **so that** I can choose go anywhere on the site<br>
+
+2.1 **As a** Site user **I can** access Nav Bar from any page **so that** I can choose go anywhere on the site<br>
 
 ### Post 
 3.1 **As a** Site user/ Guest user **I can** View a list of post/ recipes **so that** I am able to choose which recipes/post I would like to view<br>
@@ -69,10 +70,8 @@ This project's goal was to create a full-stack Django application using the comp
 4.3 **As a** site admin **I can** edit and delete recipe/post **so that** if there any repeat and if there are any error that can be solved. 
 4.4 **As a** Site admin **I can** manage user  account **so that** create new users, update current user details or deactive user status**<br>
 
-## 2.Scope
----
 
-## 3. Structure 
+## 2. Structure 
 
 ### Code Structure <hr>
 I have split the code in different Apps, FoldersFiles and Files using the Django framework. 
@@ -105,6 +104,23 @@ I have split the code in different Apps, FoldersFiles and Files using the Django
 <hr>
 
 ### Website Structure 
+The web application is designed to be user-friendly and responsive so that it can be accessed on a variety of browsers and devices with varied screen sizes. 
+I used base templates all over the website to give it a streamlined, consistent layout. 
+I will describe how I have organised the templates below: 
+
+| Page               | Description                                | HTML                               |
+|--------------------|--------------------------------------------|------------------------------------|
+| **Base Template**  | This template has a fixed NavBar at the top of the page and a Logo. Links to the Home, Blog, Contact, Log In and Log Out are all located on the NavBar. The navigation bar changes to a toggle menu on a smaller device, such as a phone or tablet. Additionally, the footer of the base design incorporates social network icons that, when clicked, launch a new tab.               | base.html            |
+| **Allauth Account** |                     |                        |
+| Sign In             | This page allows users to login with a valid username and password | login.html          |
+| Sign Out     |  This pages allows logged in user to log out     | logout.html   |
+| Register Page |  On this pages allows site user to register so the can post, like and comment on post |  signup.html         |
+| **Post**         |                               |                             |
+| Blog          | This page allows user to view all the posts that have been published | blog.html             |
+| View Post     | This pages allows user to view the current post | recipe.html     |
+| Add Post     |  This pages allows user to add recipe to be published for other user. But they need to be approved by Admin before they can be see on the Blog.html | addpost.html. |
+|   
+
 
 ### Database
 
@@ -151,7 +167,7 @@ I utilised the following models for the website to show the database model struc
 * Default - It gives a default value
 
 
-## 4. Skeleton
+## 3. Skeleton
 
 ### WireFrame
 For my project, I created a wireframe using Balsamiq. This helps me arrange the website's payment and gives me an idea of how it will seem on a desktop, tablet, and phone. 
@@ -166,7 +182,7 @@ For my project, I created a wireframe using Balsamiq. This helps me arrange the 
 - [Log Out Page](//media/wireframes/signout.png)
 - [Register Page](//media/wireframes/sign-up.png)
 
-##  5. Surface 
+##  4.. Surface 
 
 ### Font 
 
