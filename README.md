@@ -115,12 +115,41 @@ To make it simple to illustrate the relationship between datebase, I utilised [D
 
 ![Database Diagram](/media/screenshot/relationship-diagram.png)
 
-
 ### Models
-<hr> 
-    * User Model 
-    * Like Model
-    * Comment Model  
+I utilised the following models for the website to show the database model structure.
+
+#### User Model 
+- The User model contains all of the user's information and is a component of the Django authentication library.   
+- The User model features a one-to-many relationship since the user is free to publish as many posts as desired.
+
+#### Post Model
+- All of the post's fields are contained in the post model. 
+- The model captures the user (author) to identify who posted and these are foreign-keys. 
+- I'll describe the post's relationship to the other models in the project below:
+
+    * A post can have one user realtionshi - As there can only be one author of the post
+    * A post can have many realtionship with Likes - As many users can like a post
+    * A post can have many realtionship with Comments - As many users can comment as many time they would like
+
+#### Comment Model 
+- Fields for users to comment on the post are included in the comment model.
+- The model captures the post taht user comments on and this a foreigh-key
+
+#### Model Definitions:
+
+* SlugField - It is the section of a URL that, in a manner that is understandable to humans, identifies a specific page on a website. 
+* Foreign Key - is a field-to-column mapping that makes use of ORM (Object-Relational Mapper) software to establish and manage relationships across tables.  
+* Max_length - You can choose the maximum number of characters that a user may use to label something.
+* Class Meta - The model class has an inner class called Meta. It is used to alter the model fields' behaviour.
+* Boolean Field - is a Django class that uses the object-relational-mapper (ORM) to map code to a Boolean column in a relational database.
+* Text Field is a field in a database that allows you to enter any text characters.
+* Blank = True - Allows the field to be left blank
+* Ordering - The content is arranged in either ascending or descending order.
+* Date Time Field - It displayed the time and date that the information was stored.
+* str - This is used to make the object a string for the admin panel.
+* Unique - This is used when the value need to be unique for the database. 
+* Default - It gives a default value
+
 
 ## 4. Skeleton
 
