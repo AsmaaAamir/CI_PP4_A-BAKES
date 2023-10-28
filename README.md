@@ -77,12 +77,12 @@ This project's goal was to create a full-stack Django application using the comp
 ### Code Structure <hr>
 I have split the code in different Apps, FoldersFiles and Files using the Django framework. 
 
-- ### Abakes -app- 
+- #### Abakes -app- 
     This folder contains the main project files:-
     * Setting.py - Setting 
     * Urls.py - Website urls 
 
-- ### Blog -app- 
+- #### Blog -app- 
     This folder conatins all the functuionallty file for the app:-
     * Admin.py - The models are seen in the Django admin panel due to this file. It's also used in admin panel customization.
     * Forms.py - The fields on the form that are utilised in the app are customized in this file. 
@@ -91,11 +91,11 @@ I have split the code in different Apps, FoldersFiles and Files using the Django
     * urls.py - This file containe all the Website urls
     * views.py - This file contains Python functions and classes that return a web page response after receiving a request.  
 
-- ### Folder 
+- #### Folder 
     * Static - This folder contain CSS and JaveScript files
     * Templates - This folder contains all the HTML templates and AllAuth(Django authentication)
 
-- ### Files 
+- #### Files 
     * Db.sqlite3 - This file contain the Database for development
     * Manage.py - This is the main Python file for starting the website
     * Procfile - This file allows to run the App
@@ -111,7 +111,7 @@ I have split the code in different Apps, FoldersFiles and Files using the Django
 
 Relational databases was used to complete the coding for this application. During development, I used SQLite DB in production, Postgres was the primary database, and for deployment, all data was moved to Heroku Postgres.  
 
-### Data Schema 
+#### Data Schema 
 
 ### Models
 <hr> 
@@ -135,10 +135,23 @@ For my project, I created a wireframe using Balsamiq. This helps me arrange the 
 - [Register Page](//media/wireframes/sign-up.png)
 
 ##  5. Surface 
-* Font    
-* Color Palette 
-* Images
 
+### Font 
+
+For my website, I used two separate fonts: one for the heading and one for the logo. The other one was made for NavBar and some text to give it a handwritten, personalised feel.
+- [Dancing Script](//media/screenshot/font-dancing.png)
+- [Indie Flower](//media/screenshot/font-indie.png)
+
+### Color<br>
+
+I tried to capture the joy of eating a cake and the vibrant cakes when selecting the colour scheme resulting me chooing pink's and vibrant colours. 
+- [Color Palette](//media/screenshot/abakes-color.png)
+
+### Images
+
+- The gallery page images originate from [Pexels](https://www.pexels.com/search/website%20background/). 
+
+- The images I used in this individual recipes are from either[BBC Good Food](https://www.bbcgoodfood.com/) when i was seerching for recipes and some are from genrical [Googel](https://www.google.com/?&bih=1127&biw=1248&rlz=1C5CHFA_enGB1005GB1007&hl=en-GB). 
 ---
 
 # 2. Features
@@ -212,36 +225,37 @@ For the project your need Heroku and you need to make an account on [Heroku](htt
 3. Set the Environmet variable : Add "os.environ["DATABASE_URL"] = (Paste the database key from Heroku).
 4. Then add the secret key : Add "os.environ["DATABASE_URL"] = (As hsi is your project you can create your own key) for example: 
 
-os.environ["DATABASE_URL"] = (your database key )
-os.environ["SECRET_KEY"] = (your secretkey )
+        os.environ["DATABASE_URL"] = (your database key )
+        os.environ["SECRET_KEY"] = (your secretkey )
 
 ### Enviroment and Setting Files
 
 1. For getting our file setup and evenironemtn ready for the project  Add the following snippet at the top of the settings.py file:
 
-from pathlib import Path 
-import os 
-import dj_database_url 
-if os.path.isfile('env.py'): 
-    import env 
+        from pathlib import Path 
+        import os 
+        import dj_database_url 
+        if os.path.isfile('env.py'): 
+            import env 
 
 2. Just below that look for : SECURITY WARNING: keep the secret key used in production secret! and then enter following snippet:
 
-    SECRET_KEY = os.environ.get('SECRET_KEY')
+        SECRET_KEY = os.environ.get('SECRET_KEY')
 
 3. We would need to comment out the previous Database section  in order for the project to link to our database.To accomplish that, use # before the text:
      
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': BASE_DIR / 'db.sqlite3',
+            }
         }
-    }
+
 4. Once that been comment out  add the updated database details: 
     
-    DATABASES = {
-        'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
-    }
+        DATABASES = {
+            'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+        }
 
 5. After it is finished, we need make migrations : python3 manage.py makemigrations. 
 6. If everything is okay then migrate : python3 manage.py migrate.
@@ -252,53 +266,51 @@ For the project your need cloudinary and you make a account on [Cloudinary](http
 
 1. From Cloudinary dashbaord you can copy the CLOUDINARY_URL and then paste in to env.py file. 
 
-    for example:
-        os.environ["CLOUDINARY_URL"] = (your copied key from cloudinary dashbaord) 
+            os.environ["CLOUDINARY_URL"] = (your copied key from cloudinary dashbaord) 
    
 2. Add the same copied cloudinary key to Heroku config var, your would just need to enter CLOUDINARY_URL in the config section and as the key would be the same key you enter in env.py file. 
 3. Now we need to add the cloudinary key in the setting.py file.
     - Firstly add the cloudinary libararies under the installed apps you have to make sure you enter the order correctly like below:
 
-        1. 'cloudinary_storage',
-        2. 'django.contrib.staticfiles',
-        3. 'cloudinary',
+            1. 'cloudinary_storage',
+            2. 'django.contrib.staticfiles',
+            3. 'cloudinary',
 
 4. Enter the following code to let Django use Cloudinary to store media and static files:
 
-    STATIC_URL = '/static/'
-    STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
-    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+        STATIC_URL = '/static/'
+        STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+        STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+        STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-
-    MEDIA_URL = '/media/'
-    DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+        MEDIA_URL = '/media/'
+        DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 5. Enter the following code to link the Templates directory:
 
-    TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+        TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 7. Change the directory for templates to TEMPLATES_DIR (from TEMPLATES array): 
 
-    TEMPLATES = [
-        {
-            'BACKEND': 'django.template.backends.django.DjangoTemplates',
-            'DIRS': [TEMPLATES_DIR],
-            'APP_DIRS': True,
-            'OPTIONS': {
-                'context_processors': [
-                    'django.template.context_processors.debug',
-                    'django.template.context_processors.request',
-                    'django.contrib.auth.context_processors.auth',
-                    'django.contrib.messages.context_processors.messages',
-                ],
+        TEMPLATES = [
+            {
+                'BACKEND': 'django.template.backends.django.DjangoTemplates',
+                'DIRS': [TEMPLATES_DIR],
+                'APP_DIRS': True,
+                'OPTIONS': {
+                    'context_processors': [
+                        'django.template.context_processors.debug',
+                        'django.template.context_processors.request',
+                        'django.contrib.auth.context_processors.auth',
+                        'django.contrib.messages.context_processors.messages',
+                    ],
+                },
             },
-        },
-    ]   
+        ]   
 
 8. For the Website to run we need to add Heroku Hostname to Allowed_Hosts array: 
 
-    ALLOWED_HOSTS = ["ci-pp4-a-abakes.herokuapp.com", "localhost"]. 
+        ALLOWED_HOSTS = ["ci-pp4-a-abakes.herokuapp.com", "localhost"]. 
 
 ### Media and Static File
 1. Create 3 files:
@@ -347,7 +359,6 @@ I would like to implement a number of functionality upgrades in the future. I wa
 1. The capability of recovering a user's password in the event that it has been lost, stolen, or corrupted.
 2. Give the user the option to rate the recipe once they tried.
 3. The opportunity to let users vote on the upcoming recipe.
+4. I would alos like to give user the access to delete and edit their recipe posts. 
 
-## Credits
-
-## Acknowledgements
+# Credits and Acknowledgements
