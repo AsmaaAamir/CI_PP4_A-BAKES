@@ -8,9 +8,5 @@ from django.test import TestCase
 # --------------------
 from .forms.py import AddPostForm, Comment_form
 
-class TestAddPostForm(TestCase):
     
-class TestCommentForm(TestCase):
-    
-    
-    
+class tEST
